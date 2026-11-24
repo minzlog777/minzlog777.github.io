@@ -11,7 +11,7 @@
   <meta name="description" content="MINZ 영상 제작·촬영·편집 포트폴리오. 부산 지역 홍보영상, 드론 촬영, SNS 숏폼, AI 시네마틱, Figma 디자인 프로젝트.">
   <meta property="og:title" content="MINZ | Director’s Studio — Design Cut v5.4">
   <meta property="og:description" content="대표작 제작 과정과 실제 담당 역할, 영상·숏폼 성과 및 디자인 작업을 담은 MINZ의 포트폴리오.">
-  <meta property="og:image" content="https://minzlog777.github.io/MINZ_Portfolio_001/assets/img/thumbnails/minz-showreel-studio-v5.webp">
+  <meta property="og:image" content="https://minzlog777.github.io/assets/img/thumbnails/minz-showreel-studio-v5.webp">
   <title>MINZ | Director’s Studio — v5.4</title>
   <link rel="icon" href="assets/img/lastfavicon.png">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -27,6 +27,9 @@
 
 
 
+  <style>
+    #videoDialog .dialog-player video { display: block; max-width: 100%; max-height: 76vh; max-height: 76dvh; width: auto; height: auto; margin: 0 auto; object-fit: contain; }
+  </style>
 </head>
 
 <body class="studio-page">
@@ -39,7 +42,7 @@
           href="#about">ABOUT</a><a href="#contact">CONTACT</a>
       </nav>
       <div class="header-actions">
-        <a class="studio-back-link" href="index.html" aria-label="기존 포트폴리오로 돌아가기">ORIGINAL SITE ↗</a>
+        <a class="studio-back-link" href="index-original.html" aria-label="기존 포트폴리오로 돌아가기">ORIGINAL SITE ↗</a>
         <button class="bgm-btn" id="bgmBtn" type="button" aria-pressed="false">♫ BGM OFF</button>
         <button class="menu-btn" id="menuBtn" aria-controls="nav" aria-expanded="false" aria-label="메뉴 열기"
           type="button">☰</button>
@@ -153,7 +156,7 @@
             <h3 id="studioStageTitle">바다에서 온 초대장</h3>
             <p class="studio-stage-desc" id="studioStageDesc">어린 선비의 시선으로 부산 동구를 여행하는 AI 시네마틱 스토리.</p>
             <p class="studio-stage-role" id="studioStageRole">기획 · 촬영 · AI 연출 · 편집</p>
-            <button type="button" class="studio-stage-action" id="studioStageAction" disabled>공모전 제출 완료</button>
+            <button type="button" class="studio-stage-action" id="studioStageAction" disabled>영상 재생하기 ▶</button>
             <a class="studio-notes-jump" href="#studio-director-notes">제작 과정 살펴보기 <span aria-hidden="true">↓</span></a>
           </div>
         </div>
@@ -444,7 +447,10 @@
             IMG + 'donggu-studio-cinematic-v4.webp'
           ],
           focus: '실사와 AI를 연결한 시네마틱 스토리',
-          note: '공모전 제출 완료 · 결과 대기'
+          note: '공모전 제출 완료 · 결과 대기',
+          result: '공모전 제출 완료 · 결과 대기',
+          video: 'assets/img/video/동구 공모전.mp4',
+          format: 'short'
         },
         { cat: 'video', type: 'TOURISM / BRAND FILM', title: '영도 봉산마을 관광 콘텐츠', desc: '200만 원 제작지원 선정 프로젝트에서 기획 과정에 참여하고, 현장·드론 촬영과 롱폼·숏폼 편집을 중심으로 담당했습니다.', result: '참여 프로젝트 · 제작지원 200만 원', role: '기획 참여 · 현장·드론 촬영 · 영상 편집', focus: '기획 참여 · 드론 촬영 · 롱폼·숏폼 편집', images: [YT + 'WOeKcOesYJQ/hqdefault.jpg'], url: 'https://youtu.be/WOeKcOesYJQ' },
         {
