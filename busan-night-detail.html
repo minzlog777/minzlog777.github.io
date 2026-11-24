@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="BUSAN NIGHT 01 — MINZ가 Figma에서 제작한 세로형 향수 브랜드 콘셉트 상세페이지 전체 보기">
+  <meta name="theme-color" content="#0b1321">
+  <meta property="og:title" content="BUSAN NIGHT 01 | MINZ Portfolio">
+  <title>BUSAN NIGHT 01 | MINZ Director's Studio</title>
+  <link rel="icon" href="assets/img/lastfavicon.png">
+  <link rel="stylesheet" href="assets/css/busan-night-detail.css?v=20261123-gif-overlay">
+</head>
+<body>
+  <a class="skip-link" href="#full-design">전체 디자인으로 건너뛰기</a>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="directors-studio-cinematic-v5-4.html#works" aria-label="MINZ 포트폴리오로 돌아가기">MINZ<span>®</span></a>
+    <span class="page-identity">BUSAN NIGHT 01 <small>· FIGMA CASE STUDY</small></span>
+    <nav class="nav-links" aria-label="포트폴리오 메뉴">
+      <a class="figma-link" href="https://www.figma.com/design/Ou2MiTEvkYQSkR5TikJLqg?node-id=183-191" target="_blank" rel="noopener noreferrer">FIGMA 원본</a>
+      <a class="nav-back" href="directors-studio-cinematic-v5-4.html#works">← 작품 목록</a>
+    </nav>
+  </header>
+  <main id="full-design">
+    <div class="intro-line" aria-label="프로젝트 정보"><span>BRAND VISUAL / LONG-FORM DETAIL PAGE</span><span>860 × 15,201 px · ORIGINAL DESIGN</span></div>
+    <figure class="original-design" id="designFrame">
+      <!-- Figma 183:191 전체 프레임을 PNG 1x로 내보낸 뒤 아래 경로에 업로드하세요. -->
+      <img
+        id="originalDesignImage"
+        src="assets/img/design/busan-night-full.png"
+        alt="BUSAN NIGHT 01 향수 브랜드 콘셉트 상세페이지 전체 디자인. 브랜드 스토리, 무드 장면, 향기 비주얼, 제품 특징, 라이프스타일, 제품 상세 및 엔딩 구성"
+        width="860" height="15201"
+        decoding="async"
+        fetchpriority="high"
+      >
+      <!-- Figma 183:191의 이미지 레이어(x=0,y=2280,w=860,h=1336).
+           원본 GIF를 정지 PNG 위에 레이어로 표시합니다.
+           GIF 파일은 GitHub에 사용자가 별도로 업로드한 원본을 사용합니다. -->
+      <div class="busan-night-motion" id="busanNightMotion" aria-hidden="true">
+        <img
+          id="busanNightMotionAsset"
+          src="assets/img/design/KakaoTalk_20260929_103843507_860%201.gif"
+          alt=""
+          width="860" height="1525"
+          decoding="async" loading="lazy"
+        >
+      </div>
+      <div class="image-missing" id="missingImage" role="status" hidden>
+        <h1>BUSAN NIGHT 01</h1>
+        <p>원본 Figma 이미지를 넣으면 세로 15,201px 디자인이 잘림 없이 표시됩니다.</p>
+        <p class="filepath">assets/img/design/busan-night-full.png</p>
+        <a href="https://www.figma.com/design/Ou2MiTEvkYQSkR5TikJLqg?node-id=183-191" target="_blank" rel="noopener noreferrer">Figma 원본에서 보기 ↗</a>
+      </div>
+    </figure>
+    <div class="afterword"><p>Figma에서 제작한 개인 브랜드 비주얼 콘셉트 프로젝트입니다. 실제 판매 제품 페이지가 아닙니다.</p><div><a href="assets/img/design/busan-night-full.png" target="_blank" rel="noopener noreferrer" id="originalSizeLink">원본 크기로 보기 ↗</a><a href="directors-studio-cinematic-v5-4.html#works">다른 프로젝트 보기 ↗</a></div></div>
+  </main>
+  <footer>© 2026 MINZ · DIRECTOR'S STUDIO</footer>
+  <script>
+  (() => {
+    const image = document.getElementById('originalDesignImage');
+    const fallback = document.getElementById('missingImage');
+    const full = document.getElementById('originalSizeLink');
+    const motion = document.getElementById('busanNightMotion');
+    const motionAsset = document.getElementById('busanNightMotionAsset');
+    function failed(){
+      image.hidden = true;
+      fallback.hidden = false;
+      full.hidden = true;
+      motion.hidden = true;
+    }
+    // When the animation file is missing, keep the Figma full-page image visible.
+    motionAsset.addEventListener('error', () => { motion.hidden = true; });
+    if (motionAsset.complete && motionAsset.naturalWidth === 0) motion.hidden = true;
+    image.addEventListener('error', failed);
+    if (image.complete && image.naturalWidth === 0) failed();
+    const indicator = document.getElementById('readingProgress');
+    let ticking = false;
+    function update(){
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      indicator.style.width = `${max > 0 ? Math.min(100, window.scrollY / max * 100) : 0}%`;
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  })();
+  </script>
+</body>
+</html>

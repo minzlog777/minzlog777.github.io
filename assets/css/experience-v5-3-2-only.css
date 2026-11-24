@@ -1,0 +1,191 @@
+/* =============================================================
+   MINZ DIRECTOR'S STUDIO v5.3.2 — Cinematic Career Polish
+   Preserve the dramatic dark proof card; reduce competition
+   with the Experience heading and control responsive balance.
+   Affects #experience only. No project/audio/video JS changes.
+   ============================================================= */
+.studio-page #experience {
+  scroll-margin-top:100px;
+}
+.studio-page #experience .section-heading {
+  align-items:end;
+  margin-bottom:clamp(38px,4.4vw,60px);
+}
+.studio-page #experience .section-heading .section-title {
+  font-size:clamp(54px,6.7vw,96px);
+  line-height:.93;
+  letter-spacing:-.079em;
+}
+.studio-page #experience .section-heading .section-description {
+  max-width:365px;
+  line-height:1.8;
+}
+/* Reintroduced cinematic card, scaled to feel like a featured result,
+   not a second hero section. */
+.studio-page #experience .studio-achievement-strip {
+  --proof-ink:#1a1225;
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  grid-template-columns:minmax(0,1.48fr) minmax(245px,.64fr);
+  align-items:center;
+  gap:clamp(25px,3vw,48px);
+  min-width:0;
+  overflow:hidden;
+  margin:0 0 clamp(26px,3.2vw,42px);
+  padding:clamp(28px,3.4vw,47px) clamp(29px,4vw,57px);
+  border-radius:20px;
+  color:#fff;
+  background:radial-gradient(ellipse 45% 90% at 90% 18%,rgba(132,69,201,.26),transparent 75%),
+             linear-gradient(116deg,#24182f 0%,#1a1125 60%,#20142e 100%);
+  border:1px solid rgba(194,153,244,.28);
+  box-shadow:0 24px 62px rgba(37,19,55,.20), inset 0 1px 0 rgba(255,255,255,.055);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.studio-page #experience .studio-achievement-strip::before {
+  content:"";
+  position:absolute;inset:0 auto 0 0;width:4px;
+  background:linear-gradient(180deg,#d9b8ff,#8b58d1 65%,#554074);
+  z-index:2;
+}
+.studio-page #experience .studio-achievement-strip::after {
+  content:"";
+  position:absolute;pointer-events:none;
+  width:340px;height:340px;border:1px solid rgba(211,171,255,.09);
+  border-radius:50%;right:-155px;top:-180px;
+  box-shadow:0 0 0 53px rgba(200,158,255,.035),0 0 0 110px rgba(200,158,255,.018);
+  z-index:0;
+}
+.studio-page #experience .studio-achievement-main,
+.studio-page #experience .studio-achievement-metric {
+  position:relative;z-index:1;min-width:0;
+}
+.studio-page #experience .studio-achievement-eyebrow {
+  display:flex;align-items:center;gap:10px;
+  color:#d9b5ff!important;
+  font-size:10px;font-weight:900;letter-spacing:.18em;
+  line-height:1.35;margin:0 0 18px;
+}
+.studio-page #experience .studio-achievement-pin {
+  width:7px;height:7px;border-radius:50%;flex:0 0 7px;
+  background:#d4a8ff;box-shadow:0 0 0 5px rgba(207,163,255,.13);
+}
+.studio-page #experience .studio-achievement-sep {opacity:.55;}
+.studio-page #experience .studio-achievement-main h3 {
+  color:#fff;
+  font-size:clamp(26px,2.5vw,39px);
+  line-height:1.2;
+  letter-spacing:-.056em;
+  margin:0 0 17px;
+  font-weight:870;
+  text-wrap:balance;
+  word-break:keep-all;
+}
+.studio-page #experience .studio-achievement-main h3 span {
+  color:#e5d2ff;font-weight:740;
+}
+.studio-page #experience .studio-achievement-summary {
+  max-width:570px;margin:0;
+  font-size:clamp(12px,1.09vw,14px);
+  line-height:1.75;
+  color:#d4c6dd!important;
+  word-break:keep-all;
+}
+.studio-page #experience .studio-achievement-tags {
+  display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;
+}
+.studio-page #experience .studio-achievement-tags span {
+  display:inline-flex;align-items:center;min-height:26px;
+  padding:5px 9px;border-radius:5px;
+  font-size:9px;font-weight:800;letter-spacing:.055em;
+  color:#efddff;
+  border:1px solid rgba(218,187,253,.35);
+  background:rgba(187,135,240,.075);
+}
+.studio-page #experience .studio-achievement-metric {
+  border-left:1px solid rgba(213,176,248,.30);
+  padding-left:clamp(27px,3.5vw,55px);
+  display:flex;flex-direction:column;align-items:flex-start;
+  justify-content:center;
+}
+.studio-page #experience .studio-achievement-metric small {
+  color:#cda9ff;font-size:10px;letter-spacing:.16em;
+  font-weight:850;margin-bottom:9px;
+}
+.studio-page #experience .studio-achievement-metric strong {
+  display:flex;align-items:baseline;gap:10px;
+  font-size:clamp(74px,7.2vw,104px);
+  font-weight:920;line-height:.99;
+  letter-spacing:-.09em;color:#fff;
+  font-variant-numeric:tabular-nums;
+  text-shadow:0 12px 35px rgba(0,0,0,.12);
+  white-space:nowrap;
+}
+.studio-page #experience .studio-achievement-metric strong em {
+  font-style:normal;font-weight:750;font-size:17px;
+  letter-spacing:-.03em;color:#eee2ff;
+}
+.studio-page #experience .studio-achievement-metric p {
+  margin:11px 0 20px;
+  color:#dacde5!important;font-size:12px;line-height:1.6;
+}
+.studio-page #experience .studio-achievement-location {
+  padding-top:11px;width:100%;
+  border-top:1px solid rgba(216,190,243,.20);
+  color:#bea9cf;font-size:9px;font-weight:750;letter-spacing:.14em;
+}
+@media(hover:hover) and (pointer:fine) {
+  .studio-page #experience .studio-achievement-strip:hover {
+    transform:translateY(-3px);
+    box-shadow:0 31px 72px rgba(37,19,55,.24),inset 0 1px 0 rgba(255,255,255,.055);
+  }
+}
+@media(max-width:1050px) {
+  .studio-page #experience .studio-achievement-strip {
+    grid-template-columns:minmax(0,1.15fr) minmax(190px,.63fr);
+    gap:24px;padding:34px 32px;
+  }
+  .studio-page #experience .studio-achievement-main h3 {font-size:clamp(24px,3vw,31px);}
+  .studio-page #experience .studio-achievement-metric {padding-left:26px;}
+  .studio-page #experience .studio-achievement-metric strong {font-size:clamp(61px,7.8vw,83px);}
+  .studio-page #experience .studio-achievement-metric strong em {font-size:14px;}
+}
+@media(max-width:700px) {
+  .studio-page #experience .section-heading {margin-bottom:32px;}
+  .studio-page #experience .section-heading .section-title {
+    font-size:clamp(46px,11.5vw,67px);
+  }
+  .studio-page #experience .studio-achievement-strip {
+    grid-template-columns:minmax(0,1fr);
+    gap:23px;padding:29px 25px;
+    border-radius:16px;
+  }
+  .studio-page #experience .studio-achievement-main h3 {font-size:clamp(26px,6.7vw,32px);}
+  .studio-page #experience .studio-achievement-metric {
+    border-left:0;border-top:1px solid rgba(211,176,248,.27);
+    padding:22px 0 0;
+    display:grid;grid-template-columns:auto 1fr;
+    column-gap:12px;row-gap:5px;
+    align-items:end;
+  }
+  .studio-page #experience .studio-achievement-metric small {
+    grid-column:1/-1;margin:0;
+  }
+  .studio-page #experience .studio-achievement-metric strong {
+    font-size:clamp(67px,15vw,84px);grid-column:1/-1;
+  }
+  .studio-page #experience .studio-achievement-metric p {margin:4px 0 4px;grid-column:1/-1;}
+  .studio-page #experience .studio-achievement-location {
+    grid-column:1/-1;padding-top:10px;margin-top:4px;
+  }
+}
+@media(max-width:375px) {
+  .studio-page #experience .studio-achievement-strip {padding:24px 19px;}
+  .studio-page #experience .studio-achievement-eyebrow {font-size:9px;gap:7px;}
+  .studio-page #experience .studio-achievement-main h3 {font-size:25px;}
+  .studio-page #experience .studio-achievement-metric strong {font-size:64px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .studio-page #experience .studio-achievement-strip {transition:none!important;}
+  .studio-page #experience .studio-achievement-strip:hover {transform:none!important;}
+}

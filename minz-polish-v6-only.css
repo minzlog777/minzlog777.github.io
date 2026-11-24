@@ -1,0 +1,161 @@
+/* ==================================================================
+   MINZ v6 / VISUAL POLISH — 2026-11-19
+   Additive override only. Keep all existing projects, URLs, JS and audio.
+   ================================================================== */
+:root {
+  --minz-v6-text: #3e3549;
+  --minz-v6-purple: #663696;
+  --minz-v6-rule: #e7dfee;
+  --minz-v6-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* 01 | Clearly legible typographic hierarchy */
+.section-description,
+.minz-featured-intro > p,
+.works-grid.minz-bento .project-content > p {
+  color: var(--minz-v6-text);
+  line-height: 1.75;
+}
+.works-grid.minz-bento .project-meta {
+  font-size: 12px;
+  font-weight: 850;
+  color: var(--minz-v6-purple);
+  letter-spacing: .045em;
+}
+.works-grid.minz-bento .project-content h3 {
+  font-size: clamp(23px, 2.15vw, 29px);
+  line-height: 1.3;
+  margin: 15px 0 10px;
+  overflow-wrap: break-word;
+}
+.works-grid.minz-bento .project-foot small {
+  color: #50445b;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.6;
+}
+.filters .filter { font-size: 13px; }
+
+/* 02 | Match normal portfolio thumbnail ratio to real 16:9 films.
+         Prevent the left/right edge of title text from being clipped. */
+.works-grid.minz-bento .project .project-media {
+  aspect-ratio: 16 / 9;
+  background: #1c1429;
+}
+.works-grid.minz-bento .project-media > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+/* Portrait poster assets must remain entirely visible in horizontal cards. */
+.works-grid.minz-bento .project-media > img[src*="busan-night-thumbnail"] {
+  object-fit: contain;
+  background: #21182e;
+}
+
+/* 03 | Less dead space, more deliberate card rhythm */
+.works-grid.minz-bento { gap: 26px 28px; }
+.works-grid.minz-bento .project-content {
+  min-height: 256px;
+  padding: clamp(23px, 2.25vw, 31px);
+  border-color: var(--minz-v6-rule);
+}
+.works-grid.minz-bento .project:not(.project--detailed) .project-foot {
+  padding-top: 17px;
+}
+.works-grid.minz-bento .project {
+  border-radius: 16px;
+  transition: transform .4s var(--minz-v6-ease), box-shadow .4s ease;
+}
+.works-grid.minz-bento .project:hover,
+.works-grid.minz-bento .project:focus-within {
+  box-shadow: 0 18px 42px rgba(34, 19, 52, .105);
+}
+.works-grid.minz-bento .project-media > img {
+  transition: transform .45s var(--minz-v6-ease), filter .45s ease, opacity .3s;
+}
+@media (hover:hover) and (pointer:fine) {
+  .works-grid.minz-bento .project:hover .project-media > img {
+    transform: scale(1.026);
+    filter: brightness(.97);
+  }
+}
+
+/* 04 | Work call-to-action stays high contrast and clearly clickable */
+.project-cta {
+  background: #60358b;
+  color: white;
+  border-color: #60358b;
+  font-size: 13px;
+  min-height: 44px;
+  padding: 11px 17px;
+  box-shadow: 0 2px 7px rgba(50,25,74,.08);
+}
+.project-cta:hover { background: #48256d; border-color: #48256d; }
+.project-cta-status { color: #534462; font-size: 13px; }
+.project-action { min-width: 52px; min-height: 52px; }
+.project-cta:focus-visible,
+.project-action:focus-visible,
+.filters .filter:focus-visible,
+.nav a:focus-visible { outline: 3px solid #b799f2; outline-offset: 3px; }
+
+/* 05 | A quiet, editorial navigation underline instead of more glitter */
+.nav a { position: relative; letter-spacing: .055em; }
+.nav a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  inset: auto 0 -7px;
+  background: #c8adff;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform .28s var(--minz-v6-ease);
+}
+.nav a:hover::after,
+.nav a:focus-visible::after { transform: scaleX(1); }
+
+/* 06 | Keep featured image cinematic but uncramped on smaller laptops */
+@media (min-width:900px) and (max-width:1100px) {
+  .works-grid.minz-bento.minz-all .project--lead {
+    grid-template-columns: minmax(0,1fr);
+  }
+  .works-grid.minz-bento.minz-all .project--lead .project-media {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    border-radius: 16px 16px 0 0;
+  }
+  .works-grid.minz-bento.minz-all .project--lead .project-content {
+    min-height: 0;
+    border: 1px solid var(--minz-v6-rule);
+    border-top: 0;
+    border-radius: 0 0 16px 16px;
+  }
+}
+@media (max-width:899px) {
+  .works-grid.minz-bento .project-content { min-height: 0; }
+  .works-grid.minz-bento.minz-all .project--lead .project-content { min-height: 0; }
+  .works-grid.minz-bento .project .project-media { aspect-ratio:16 / 9; }
+}
+@media (max-width:760px) {
+  .works-grid.minz-bento { gap: 22px; }
+  .works-grid.minz-bento .project-content { padding: 22px 20px 24px; }
+  .works-grid.minz-bento .project-content > p { font-size: 15.5px; }
+  .works-grid.minz-bento .project-content h3 { font-size: 23px; }
+  .works-grid.minz-bento .project-meta { font-size: 12px; }
+  .works-grid.minz-bento .project-foot small { font-size: 13px; }
+  .project-case-tags span { font-size: 12px; }
+  .nav a::after { display: none; }
+}
+@media (max-width:390px) {
+  .works-grid.minz-bento .project-meta { flex-wrap:wrap; }
+  .project-cta, .project-cta-status { width:100%; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .works-grid.minz-bento .project { transition:none; }
+  .works-grid.minz-bento .project:hover { transform:none; }
+  .works-grid.minz-bento .project-media > img { transition:none; }
+  .nav a::after { transition:none; }
+  .works-grid.minz-bento .project-media::before { display:none; }
+}
+/* END MINZ v6 */

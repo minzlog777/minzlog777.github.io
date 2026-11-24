@@ -1,0 +1,1943 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- YouTube embeds need a valid origin/referrer for player configuration. -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#15101f">
+  <meta name="description" content="MINZ Director’s Studio | Film, Drone, AI and Creative Direction — 별도 실험용 포트폴리오">
+  <meta property="og:title" content="MINZ | Director’s Studio — Story Cut v5.3">
+  <meta property="og:description" content="MINZ Director’s Studio — 대표작 제작 노트와 실무 경력까지 담은 시네마틱 포트폴리오.">
+  <meta property="og:image" content="https://minzlog777.github.io/MINZ_Portfolio_001/assets/img/thumbnails/minz-showreel-studio-v5.webp">
+  <title>MINZ | Director’s Studio — Story Cut v5.3.2</title>
+  <link rel="icon" href="assets/img/lastfavicon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261119-6">
+  <!-- Director’s Studio v4: 독립 페이지 전용 스타일 (기존 CSS 변경 없음) -->
+<style>
+/* MINZ DIRECTOR'S STUDIO — ALT CONCEPT v1
+   Safe layer: used only by directors-studio.html; original index.html is untouched.
+   Color contrast, desktop/mobile and reduced-motion are intentionally handled. */
+:root{
+  --studio-void:#0d0b14;
+  --studio-ink:#17121e;
+  --studio-panel:#17131e;
+  --studio-edge:#3c3049;
+  --studio-violet:#c7a5ff;
+  --studio-muted:#bdb3c9;
+  --studio-white:#fffdfc;
+}
+.studio-page{background:#f5f1ed;color:#241d2b;scroll-padding-top:84px}
+.studio-page .container{width:min(1260px,calc(100% - 88px))}
+.studio-page .header{background:rgba(14,10,24,.75)}
+.studio-page .header.scrolled{background:rgba(14,10,24,.96)}
+.studio-page .logo{letter-spacing:-.075em}
+.studio-back-link{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;min-height:38px;border:1px solid rgba(210,185,255,.4);border-radius:100px;color:#ebdbff;font-size:11px;font-weight:850;letter-spacing:.05em;padding:7px 13px;transition:background .2s,transform .2s}
+.studio-back-link:hover{background:rgba(200,173,255,.22);transform:translateY(-2px)}
+/* ACT ONE / HERO */
+.studio-page .hero{min-height:750px;min-height:100svh;background:var(--studio-void)}
+.studio-page .hero-overlay{background:linear-gradient(90deg,rgba(12,9,20,.96) 0%,rgba(14,9,26,.82) 48%,rgba(18,10,28,.44) 100%),linear-gradient(0deg,rgba(10,6,17,.85),transparent 45%)}
+.studio-page .hero::after{background:radial-gradient(circle at 66% 42%,rgba(140,99,230,.17),transparent 44%)}
+.studio-page .hero-content{max-width:800px;position:relative;z-index:2}
+.studio-page .hero-title{font-size:clamp(66px,9.8vw,156px);line-height:.9;letter-spacing:-.085em;margin-bottom:30px;text-shadow:0 12px 60px rgba(0,0,0,.12)}
+.studio-page .hero-title em{color:#c9aaff}
+.studio-page .typing-line{font-size:.32em;font-weight:800;color:#fff;margin-top:23px;letter-spacing:-.04em}
+.studio-page .hero-description{max-width:650px;line-height:1.8;color:#e8e1ef}
+.studio-page .hero-kicker{font-size:12px;color:#dcc7ff}
+.studio-page .hero-services span{border-radius:30px;border-color:rgba(227,206,255,.32)}
+.studio-page .button-white{background:#c9aaff;color:#1b112a;border:1px solid #c9aaff}
+.studio-page .button-white:hover{background:#fff;color:#1b112a}
+.studio-page .hero-link{color:#fff}
+.studio-page .shutter-control{border-color:rgba(226,208,255,.31);border-radius:12px}
+.studio-camera-hud{position:absolute;inset:96px 34px 68px;z-index:0;pointer-events:none;color:#dec7ff;opacity:.7}
+.studio-camera-hud>span:is(.studio-hud-tl,.studio-hud-tr,.studio-hud-bl,.studio-hud-br){position:absolute;width:36px;height:36px;border:2px solid #d2baff}
+.studio-hud-tl{left:0;top:0;border-right:0!important;border-bottom:0!important}
+.studio-hud-tr{right:0;top:0;border-left:0!important;border-bottom:0!important}
+.studio-hud-bl{left:0;bottom:0;border-right:0!important;border-top:0!important}
+.studio-hud-br{right:0;bottom:0;border-left:0!important;border-top:0!important}
+.studio-hud-rec{position:absolute;top:14px;right:23px;display:flex;gap:9px;align-items:center;font-size:10px;letter-spacing:.13em;font-weight:800}
+.studio-hud-rec i{background:#ff6070;width:8px;height:8px;border-radius:100%;box-shadow:0 0 14px rgba(255,96,112,.6)}
+.studio-hud-side{position:absolute;right:19px;bottom:20px;font-size:10px;letter-spacing:.17em}
+/* PERFORMANCE / FILMMAKER */
+.studio-page .proof-section{background:#1a1423;color:white;border-color:#362942}
+.studio-page .proof-item{border-color:#3d314a}
+.studio-page .proof-item small{color:#d2b4ff;font-size:11px}
+.studio-page .proof-item p{color:#d6ccdf;font-size:14px}
+/* ACT TWO / FEATURED FILM STRIP */
+.studio-reel{background:var(--studio-void);color:white;padding:106px 0 104px;position:relative;overflow:hidden}
+.studio-reel::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 90% 12%,rgba(118,77,205,.18),transparent 43%)}
+.studio-reel>.container{position:relative}
+.studio-reel-head{display:flex;justify-content:space-between;align-items:end;gap:44px;margin-bottom:38px}
+.studio-reel-head h2{font-size:clamp(40px,5.8vw,82px);line-height:1.03;font-weight:900;letter-spacing:-.075em;margin:10px 0 0}
+.studio-reel-head h2 em{font-style:normal;color:#ccaaff}
+.studio-reel-head>p{max-width:340px;color:#d4c8de;font-size:15px;line-height:1.8;margin:0}
+.studio-mini-label{margin:0;color:#ccb0ff;font-size:12px;font-weight:850;letter-spacing:.14em}
+.studio-stage{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(330px,.65fr);min-height:440px;border:1px solid #4e3d61;border-radius:19px;overflow:hidden;background:#181121;box-shadow:0 28px 80px rgba(0,0,0,.24)}
+.studio-stage-media{min-height:410px;position:relative;isolation:isolate;background:linear-gradient(120deg,#3b2457,#13101c);overflow:hidden}
+.studio-stage-media::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,5,16,.55),transparent 33%);pointer-events:none;z-index:2}
+.studio-stage-placeholder{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:flex-start;flex-direction:column;padding:30px;font-size:clamp(28px,4vw,56px);font-weight:900;letter-spacing:-.07em;color:#bfa4dd}
+.studio-stage-placeholder span{font-size:12px;letter-spacing:.16em;font-weight:700}
+#studioStageImage{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:1;transition:opacity .28s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.studio-stage-media:has(img[src]){background:#171021}
+.studio-stage-media:hover #studioStageImage{transform:scale(1.025)}
+.studio-stage-index{position:absolute;z-index:4;bottom:26px;left:28px;font-size:12px;letter-spacing:.14em;font-weight:850;color:white;text-shadow:0 2px 6px #000}
+.studio-stage-focus{position:absolute;inset:23px;z-index:3;pointer-events:none}
+.studio-stage-focus i{position:absolute;width:26px;height:26px;border-color:rgba(242,230,255,.84);border-style:solid;border-width:0}
+.studio-stage-focus i:nth-child(1){top:0;left:0;border-left-width:2px;border-top-width:2px}
+.studio-stage-focus i:nth-child(2){top:0;right:0;border-right-width:2px;border-top-width:2px}
+.studio-stage-focus i:nth-child(3){bottom:0;left:0;border-left-width:2px;border-bottom-width:2px}
+.studio-stage-focus i:nth-child(4){bottom:0;right:0;border-right-width:2px;border-bottom-width:2px}
+.studio-stage-info{padding:clamp(28px,3.4vw,51px);display:flex;flex-direction:column;justify-content:center;gap:19px}
+.studio-stage-info h3{font-size:clamp(27px,3vw,43px);letter-spacing:-.055em;line-height:1.23;margin:0}
+.studio-stage-desc{font-size:16px;line-height:1.85;color:#e1d7eb;margin:0}
+.studio-stage-role{margin:0;color:#c7b6d8;font-size:13px;line-height:1.7}
+.studio-stage-action{align-self:flex-start;display:inline-flex;justify-content:center;align-items:center;min-height:45px;padding:11px 19px;background:#b68be9;color:#191024;font-size:13px;font-weight:850;letter-spacing:.015em;border:0;border-radius:99px;transition:background .25s,transform .25s}
+.studio-stage-action:hover:not(:disabled){transform:translateY(-3px);background:#fff}
+.studio-stage-action:disabled{cursor:default;background:#3a3046;color:#e1d4ef;border:1px solid #6b567b}
+.studio-filmstrip-wrap{margin-top:26px}
+.studio-filmstrip-top{display:flex;justify-content:space-between;padding:0 3px 10px;color:#b9a7cb;font-size:11px;font-weight:750;letter-spacing:.14em}
+.studio-filmstrip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.studio-filmstrip-item{border-radius:10px;border:1px solid #483453;background:#1c1626;color:#ebdef3;text-align:left;min-height:62px;padding:13px 18px;font-size:14px;font-weight:800;letter-spacing:-.015em;transition:border-color .23s,background .23s,transform .23s}
+.studio-filmstrip-item:hover{background:#292034;transform:translateY(-2px)}
+.studio-filmstrip-item.is-active{border-color:#c8a3ff;background:#47305f;color:#fff;box-shadow:inset 0 0 0 1px rgba(200,163,255,.2)}
+.studio-filmstrip-item:focus-visible{outline:3px solid #d6baff;outline-offset:2px}
+/* ACT THREE / WORKS: airy bright typography */
+.studio-page .works-section{background:#f3f0ed}
+.studio-page .works-section .section-title{letter-spacing:-.085em}
+.studio-page .section-description{font-size:16px;color:#514858}
+.studio-page .filters .filter{font-size:12px;font-weight:850;padding:11px 18px;border-color:#a69aac;color:#372e43}
+.studio-page .filters .filter.active,.studio-page .filters .filter:hover{background:#291e33;color:#fff}
+.studio-page .project{position:relative}
+.studio-page .project-media{background:#2a1d39;isolation:isolate;cursor:default}
+.studio-page .project-media:has(.project-action){cursor:pointer}
+.studio-page .project--no-link .project-media{cursor:default}
+.studio-page .project-media img{transition:transform .6s cubic-bezier(.2,.8,.2,1),filter .4s ease}
+.studio-page .project:hover .project-media img{filter:brightness(.89);transform:scale(1.028)}
+.studio-page .project-media .studio-viewfinder{position:absolute;z-index:3;inset:15px;pointer-events:none;opacity:0;transition:opacity .35s ease}
+.studio-page .studio-viewfinder .studio-corner{width:20px;height:20px;position:absolute;border-color:rgba(255,255,255,.95);border-style:solid}
+.studio-page .studio-viewfinder .studio-corner:nth-child(1){top:0;left:0;border-width:2px 0 0 2px}
+.studio-page .studio-viewfinder .studio-corner:nth-child(2){top:0;right:0;border-width:2px 2px 0 0}
+.studio-page .studio-viewfinder .studio-corner:nth-child(3){bottom:0;left:0;border-width:0 0 2px 2px}
+.studio-page .studio-viewfinder .studio-corner:nth-child(4){bottom:0;right:0;border-width:0 2px 2px 0}
+.studio-page .studio-viewfinder b{position:absolute;top:5px;left:29px;font-size:11px;color:#fff;letter-spacing:.12em;text-shadow:0 1px 5px #000}
+.studio-page .studio-viewfinder b::before{content:"";display:inline-block;width:6px;height:6px;border-radius:99px;background:#fc6172;margin-right:7px;vertical-align:2px}
+.studio-page .studio-viewfinder .studio-finder-text{position:absolute;right:28px;bottom:5px;color:#fff;font-weight:800;font-size:10px;letter-spacing:.14em;text-shadow:0 2px 5px #000}
+@media (hover:hover) and (pointer:fine){
+  .studio-page .project:hover .studio-viewfinder{opacity:1}
+  .studio-page .project:hover .project-media::before{opacity:.7}
+}
+.studio-page .project-content{background:#fffdfc}
+.studio-page .project-content h3{color:#251b2d}
+.studio-page .project-content>p{color:#4d4555;line-height:1.75}
+.studio-page .project-meta,.studio-page .project-foot b{color:#7243b2}
+.studio-page .project-foot small{color:#554c61}
+.studio-page .project-cta{transition:transform .25s,box-shadow .25s}
+.studio-page .project-cta:is(a,button):hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(58,27,95,.15)}
+/* ACT FOUR / IDENTITY */
+.studio-page .minz-intro{background:#17111e}
+.studio-page .experience-section{background:#eae4ed}
+.studio-page .experience-feature{background:#21182b}
+.studio-page .contact-section{background:#130e1b}
+.studio-page .about-section{background:#fffdfb}
+.studio-page .footer{background:#100c17}
+/* SMART MOBILE */
+@media(max-width:1050px){
+  .studio-page .container{width:calc(100% - 48px)}
+  .studio-stage{grid-template-columns:minmax(0,1fr) minmax(260px,.7fr)}
+  .studio-stage-info{padding:27px}
+}
+@media(max-width:900px){
+  .studio-reel{padding:84px 0 85px}
+  .studio-reel-head{align-items:start;display:block}
+  .studio-reel-head>p{margin-top:20px;max-width:650px}
+  .studio-stage{grid-template-columns:1fr}
+  .studio-stage-media{min-height:0;aspect-ratio:16/9}
+  .studio-stage-info{padding:29px;gap:13px}
+  .studio-stage-info h3{font-size:32px}
+  .studio-stage-info .studio-stage-desc{font-size:15px}
+  .studio-back-link{padding:6px 10px;font-size:10px}
+}
+@media(max-width:760px){
+  .studio-page .container{width:calc(100% - 32px)}
+  .studio-page .hero-title{font-size:clamp(58px,13vw,99px)}
+  .studio-page .hero-description{font-size:16px}
+  .studio-camera-hud{inset:88px 15px 62px;opacity:.42}
+  .studio-hud-rec{right:4px;top:8px;font-size:8px}
+  .studio-hud-side{font-size:8px;right:4px;bottom:6px}
+  .studio-back-link{font-size:0;width:38px;padding:0;min-width:38px}
+  .studio-back-link::after{content:"↩";font-size:18px;line-height:1}
+  .studio-page .nav{z-index:10}
+  .studio-reel-head h2{font-size:clamp(37px,10vw,59px)}
+  .studio-reel-head>p{font-size:14px}
+  .studio-filmstrip{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x mandatory;scrollbar-width:thin;padding-bottom:7px}
+  .studio-filmstrip-item{flex:0 0 min(75vw,300px);scroll-snap-align:start;min-height:55px;font-size:13px;padding:12px 14px}
+  .studio-stage-media{aspect-ratio:16/10}
+  .studio-stage-info{padding:23px}
+  .studio-stage-info h3{font-size:29px}
+  .studio-page .works-grid{gap:24px}
+  .studio-page .project-content>p{font-size:15px}
+  .studio-page .project-foot small{font-size:12px}
+}
+@media(max-width:360px){
+  .studio-page .hero-title{font-size:56px}
+  .studio-hud-rec{display:none}
+  .studio-page .project-meta{font-size:10px}
+  .studio-stage-index{left:16px;bottom:14px;font-size:10px}
+  .studio-stage-focus{inset:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .studio-page .studio-filmstrip-item,.studio-page .project-media img,#studioStageImage,.studio-stage-action,.studio-page .project .studio-viewfinder{animation:none!important;transition:none!important}
+}
+
+</style>
+  <!-- Director’s Studio v4: 독립 페이지 전용 스타일 (기존 CSS 변경 없음) -->
+<style>
+/* ================================================
+   MINZ DIRECTOR'S STUDIO / THUMBNAIL SYSTEM V2
+   Affects ONLY body.studio-page, not original index.html.
+   Uses existing project originals. No invented photos.
+   ================================================ */
+
+.studio-page {
+  --studio-frame-purple: #b690ee;
+  --studio-label-text: #f8f2ff;
+  --studio-edge: rgba(205,175,242,.65);
+}
+
+/* Only in new studio page: hide legacy FEATURED pill to avoid overlapping genre tag */
+.studio-page .minz-feature-stamp { display:none!important }
+
+/* Film still: clean image, camera-themed chrome outside core subject. */
+.studio-page .works-grid .project-media {
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(136, 108, 160, .42);
+  border-radius: 16px 16px 0 0;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+  background: #1a1421;
+}
+.studio-page .works-grid .project-media img {
+  width:100%; height:100%; object-fit:cover;
+  filter: contrast(1.045) saturate(.94);
+  transition: transform .58s cubic-bezier(.2,.8,.2,1), filter .45s ease;
+}
+.studio-page .works-grid .project-media::after {
+  content:''; position:absolute; z-index:1; inset:0; pointer-events:none;
+  background:linear-gradient(180deg,rgba(10,7,16,.42),transparent 26%,transparent 66%,rgba(12,8,19,.48));
+}
+.studio-page .works-grid .project:hover .project-media img,
+.studio-page .works-grid .project:focus-within .project-media img {
+  transform:scale(1.035);
+  filter:contrast(1.075) saturate(1.03);
+}
+
+/* Subtle catalog bar - deliberately avoids fake 4K, running time, or awards. */
+.studio-page .studio-thumb-label,
+.studio-page .studio-thumb-ordinal {
+  position:absolute; z-index:4; top:15px; pointer-events:none;
+  color:var(--studio-label-text); font-size:10px;
+  letter-spacing:.11em; font-weight:850; line-height:1.25;
+  background:rgba(22,13,34,.75);
+  border:1px solid rgba(222,201,243,.32);
+  border-radius:6px; padding:7px 10px;
+  text-shadow:0 1px 5px rgba(0,0,0,.25);
+  backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px);
+}
+.studio-page .studio-thumb-label {left:15px; max-width:calc(100% - 108px)}
+.studio-page .studio-thumb-ordinal {right:15px; background:rgba(11,9,18,.53)}
+.studio-page .studio-thumb-signature {
+  position:absolute; z-index:4; left:16px; bottom:15px;
+  font-size:9px; letter-spacing:.15em; font-weight:800; color:#fff;
+  text-shadow:0 1px 7px #000; pointer-events:none;
+  opacity:0; transform:translateY(4px);
+  transition:opacity .25s ease, transform .25s ease;
+}
+.studio-page .project:hover .studio-thumb-signature,
+.studio-page .project:focus-within .studio-thumb-signature {opacity:1; transform:none}
+.studio-page .studio-featured-project .project-media {
+  border-color:rgba(173,116,235,.67);
+  box-shadow:0 0 0 1px rgba(161,110,220,.15);
+}
+.studio-page .studio-featured-project .studio-thumb-label {
+  background:rgba(109,56,163,.8);
+  border-color:rgba(224,197,255,.55);
+}
+/* existing viewfinder receives smooth, restrained focus rather than excessive UI */
+.studio-page .project-media .studio-viewfinder {
+  inset:11px;
+  z-index:3;
+}
+.studio-page .project-media .studio-viewfinder b,
+.studio-page .project-media .studio-viewfinder .studio-finder-text {
+  display:none; /* title / type already shown in HTML card */
+}
+.studio-page .project-media .studio-viewfinder .studio-corner {
+  width:16px;height:16px;border-color:rgba(255,255,255,.77);
+}
+.studio-page .works-grid .project-content {
+  background:#fffdfa;
+  border-color:#e7deec;
+}
+.studio-page .works-grid .project-meta {font-size:11px; letter-spacing:.065em}
+.studio-page .works-grid .project-foot small {font-size:12px;color:#5d5366}
+.studio-page .works-grid .project-foot b {color:#674399}
+
+/* Actual project mini-thumbnails in filmstrip: the contact-sheet feeling */
+.studio-page .studio-filmstrip-item.has-thumb {
+  display:grid; grid-template-columns:90px minmax(0,1fr); gap:13px;
+  align-items:center; min-height:88px; padding:9px 15px 9px 18px;
+}
+.studio-page .studio-filmstrip-item .studio-filmstrip-mini {
+  width:90px; height:58px; display:block; overflow:hidden;
+  background:#3b284e; border-radius:6px;
+  border:1px solid rgba(218,191,251,.35);
+}
+.studio-page .studio-filmstrip-mini img { width:100%; height:100%; object-fit:cover; display:block }
+.studio-page .studio-filmstrip-label {font-size:13px; line-height:1.42; min-width:0; overflow-wrap:break-word}
+@media(max-width:600px) {
+  .studio-page .studio-filmstrip-item.has-thumb {
+    grid-template-columns:78px minmax(0,1fr); min-height:77px; gap:9px; padding:8px 10px 8px 15px;
+  }
+  .studio-page .studio-filmstrip-item .studio-filmstrip-mini {width:78px; height:53px}
+  .studio-page .studio-filmstrip-label {font-size:12px}
+}
+
+/* The director's three selected frames: generous focus, no invented text */
+.studio-page .studio-stage {
+  box-shadow:0 25px 85px rgba(8,5,17,.36), 0 0 0 1px rgba(183,136,235,.12);
+}
+.studio-page .studio-stage-media::after {
+  background:linear-gradient(0deg,rgba(8,5,16,.5),transparent 32%);
+}
+.studio-page .studio-stage-focus {inset:20px}
+.studio-page .studio-stage-info h3 {text-wrap:balance}
+.studio-page .studio-filmstrip-item {
+  border-color:#5b446d;
+  background:linear-gradient(165deg,#251a31,#1a1424);
+  position:relative;
+  padding-left:20px;
+}
+.studio-page .studio-filmstrip-item::before {
+  content:''; position:absolute; left:9px; top:23%; bottom:23%; width:3px;
+  background:#7b5a95; border-radius:4px; transition:background .25s;
+}
+.studio-page .studio-filmstrip-item.is-active::before {background:#dec5ff}
+
+@media(max-width:900px) {
+  .studio-page .works-grid .project-media {aspect-ratio:16 / 9}
+  .studio-page .studio-stage-focus {inset:14px}
+}
+@media(max-width:600px) {
+  .studio-page .studio-thumb-label,.studio-page .studio-thumb-ordinal {
+    font-size:9px; padding:6px 8px; top:12px;
+  }
+  .studio-page .studio-thumb-label {left:12px}
+  .studio-page .studio-thumb-ordinal {right:12px}
+  .studio-page .studio-thumb-signature {display:none}
+  .studio-page .works-grid .project-media {border-radius:12px 12px 0 0}
+  .studio-page .studio-stage-focus {inset:11px}
+  .studio-page .studio-filmstrip-item {padding-left:18px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .studio-page .studio-thumb-signature,.studio-page .works-grid .project-media img {
+    transition:none!important; transform:none!important;
+  }
+}
+
+</style>
+  <link rel="preload" as="image" href="assets/img/thumbnails/donggu-studio-cinematic-v4.webp">
+<style id="minz-equal-project-cards">
+/* MINZ Director's Studio v4 — Equal-height project cards
+   Scope: Director's Studio only, leave FEATURED 01 wide layout intact. */
+.studio-page .works-grid.minz-bento {
+  align-items: stretch;
+}
+
+/* Standard 2-column cards fill the height of their row. */
+.studio-page .works-grid.minz-bento > .project:not(.project--lead),
+.studio-page .works-grid.minz-bento:not(.minz-all) > .project--lead {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+}
+
+.studio-page .works-grid.minz-bento > .project:not(.project--lead) > .project-media,
+.studio-page .works-grid.minz-bento:not(.minz-all) > .project--lead > .project-media {
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.studio-page .works-grid.minz-bento > .project:not(.project--lead) > .project-content,
+.studio-page .works-grid.minz-bento:not(.minz-all) > .project--lead > .project-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Keep the role and real, clickable CTA at the card bottom. */
+.studio-page .works-grid.minz-bento > .project:not(.project--lead) .project-foot,
+.studio-page .works-grid.minz-bento:not(.minz-all) > .project--lead .project-foot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 22px;
+}
+.studio-page .works-grid.minz-bento > .project:not(.project--lead) .project-foot small,
+.studio-page .works-grid.minz-bento:not(.minz-all) > .project--lead .project-foot small {
+  flex: 0 1 auto;
+  text-align: left;
+}
+.studio-page .works-grid.minz-bento > .project:not(.project--lead) .project-cta,
+.studio-page .works-grid.minz-bento:not(.minz-all) > .project--lead .project-cta {
+  align-self: flex-end;
+}
+
+@media (max-width: 500px) {
+  .studio-page .works-grid.minz-bento > .project:not(.project--lead) .project-cta,
+  .studio-page .works-grid.minz-bento:not(.minz-all) > .project--lead .project-cta {
+    align-self: stretch;
+  }
+}
+
+</style>
+<style id="minz-studio-stage-v41">
+
+/* ================================================================
+   MINZ Director's Studio / Featured Stage v4.1
+   Fix: image letterboxing, ghost MINZ text, overlapped FRAME labels,
+        narrow right column, responsive typography. Stage only.
+   ================================================================ */
+.studio-page .studio-stage {
+  grid-template-columns: minmax(0, 1.3fr) minmax(365px, .8fr);
+  min-height: 0;
+  align-items: stretch;
+  background: #17111f;
+  border-color: #554065;
+}
+.studio-page .studio-stage-media {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  background: #100d18;
+  border-right: 1px solid rgba(210, 174, 252, .18);
+  overflow: hidden;
+}
+.studio-page .studio-stage-media::after {display: none}
+.studio-page .studio-stage-photo {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(145deg, #281a38, #14101b);
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+.studio-page .studio-stage-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(9, 6, 17, .06), transparent 48%, rgba(9, 6, 17, .08));
+}
+.studio-page #studioStageImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  border: 0;
+  transition: transform .5s ease, opacity .28s ease;
+}
+.studio-page .studio-stage-photo:hover #studioStageImage {transform: scale(1.012)}
+.studio-page .studio-stage-photo .studio-stage-placeholder {display: none}
+.studio-page .studio-stage-photo:has(#studioStageImage[hidden]) .studio-stage-placeholder {
+  display: grid;
+  place-items: center;
+  inset: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: #e6d6f8;
+  padding: 15px;
+}
+.studio-page .studio-stage-photo .studio-stage-focus {
+  position: absolute;
+  inset: 16px;
+  z-index: 3;
+}
+.studio-page .studio-stage-photo .studio-stage-focus i {
+  width: 21px;
+  height: 21px;
+  border-color: rgba(255, 255, 255, .85);
+}
+.studio-page .studio-stage-caption {
+  min-height: 49px;
+  margin-top: auto;
+  padding: 13px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  background: #100c18;
+  border-top: 1px solid rgba(215, 187, 248, .18);
+}
+.studio-page .studio-stage-caption-name {
+  color: #cab6df;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .09em;
+  line-height: 1.3;
+}
+.studio-page .studio-stage-caption .studio-stage-index {
+  position: static;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.3;
+  letter-spacing: .11em;
+  font-weight: 850;
+  color: #fff;
+  text-shadow: none;
+  white-space: nowrap;
+}
+.studio-page .studio-stage-info {
+  justify-content: center;
+  gap: 17px;
+  padding: clamp(27px, 3vw, 45px);
+}
+.studio-page .studio-stage-info .studio-mini-label {line-height: 1.5}
+.studio-page .studio-stage-info h3 {
+  font-size: clamp(26px, 2.6vw, 39px);
+  line-height: 1.22;
+  word-break: keep-all;
+}
+.studio-page .studio-stage-info .studio-stage-desc {
+  font-size: 16px;
+  line-height: 1.78;
+  word-break: keep-all;
+}
+.studio-page .studio-stage-info .studio-stage-role {font-size: 13px;line-height: 1.7}
+.studio-page .studio-stage-action {margin-top: 3px}
+@media (max-width: 1100px) {
+  .studio-page .studio-stage {grid-template-columns: minmax(0, 1fr)}
+  .studio-page .studio-stage-media {border-right: 0;border-bottom: 1px solid rgba(210, 174, 252, .18)}
+  .studio-page .studio-stage-photo {aspect-ratio: 16 / 9}
+  .studio-page .studio-stage-info {padding: 27px 30px 32px;gap: 13px}
+  .studio-page .studio-stage-info h3 {font-size: clamp(27px, 4vw, 36px)}
+}
+@media (max-width: 600px) {
+  .studio-page .studio-stage {border-radius: 14px}
+  .studio-page .studio-stage-media {aspect-ratio: auto}
+  .studio-page .studio-stage-photo {aspect-ratio: 16 / 9}
+  .studio-page .studio-stage-photo .studio-stage-focus {inset: 11px}
+  .studio-page .studio-stage-caption {padding: 11px 13px;min-height: 42px}
+  .studio-page .studio-stage-caption-name,
+  .studio-page .studio-stage-caption .studio-stage-index {font-size: 9px;letter-spacing: .035em}
+  .studio-page .studio-stage-info {padding: 23px 21px 26px}
+  .studio-page .studio-stage-info .studio-stage-desc {font-size: 15px;line-height: 1.72}
+  .studio-page .studio-stage-action {min-height: 45px}
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-page .studio-stage-photo:hover #studioStageImage {transform: none}
+}
+
+</style>
+<style id="minz-studio-finecut-v5">
+/* ============================================================
+   MINZ / DIRECTOR'S STUDIO / FINE CUT 05
+   Visual refinement only. The original index.html is untouched.
+   Preserve original works, film links, BGM and shutter behavior.
+   ============================================================ */
+.studio-page { --studio-fine-violet:#c8a8ff; --studio-dark-ink:#17101e; }
+.studio-page ::selection {background:#c8a8ff;color:#17101e;}
+/* Distinctive film-poster treatment for the real 30-second film. */
+.studio-page .minz-intro {
+  background:radial-gradient(circle at 85% 18%,rgba(160,105,230,.13),transparent 38%),#17111e;
+}
+.studio-page .intro-head h2 {text-wrap:balance;}
+.studio-page .intro-head>p:last-child {font-size:16px;line-height:1.82;}
+.studio-page #introPlayer {
+  aspect-ratio:16 / 9;
+  border:1px solid rgba(204,177,245,.42);
+  border-radius:20px;
+  box-shadow:0 35px 86px rgba(0,0,0,.37),0 0 0 4px rgba(190,148,238,.035);
+}
+.studio-page #introPlayer .intro-cover {isolation:isolate;aspect-ratio:16/9;}
+.studio-page #introPlayer .intro-cover>img {
+  width:100%; height:100%; object-fit:cover; object-position:center;
+  filter:brightness(.98) contrast(1.025) saturate(.97);
+  transform:scale(1); transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .7s ease;
+}
+.studio-page #introPlayer .intro-cover::after {
+  z-index:1;
+  background:linear-gradient(90deg,rgba(18,10,29,.72),rgba(16,8,27,.30) 36%,transparent 67%),
+             linear-gradient(0deg,rgba(8,6,16,.70),transparent 26%);
+}
+.studio-page #introPlayer .intro-cover:hover>img {filter:brightness(1.05) saturate(1.03);transform:scale(1.018);}
+.studio-page .studio-intro-copy {
+  position:absolute;z-index:2;pointer-events:none;
+  top:clamp(18px,4.6%,54px);left:clamp(20px,5%,66px);
+  max-width:48%;display:flex;flex-direction:column;align-items:flex-start;
+  color:#fff;text-align:left;gap:clamp(7px,1.5vw,20px);
+  text-shadow:0 2px 12px rgba(8,4,15,.26);
+}
+.studio-page .studio-intro-eyebrow {
+  display:inline-flex;align-items:center;gap:7px;
+  color:#e6d3ff;font-size:clamp(9px,.9vw,12px);font-weight:850;letter-spacing:.17em;
+}
+.studio-page .studio-intro-eyebrow::before {
+  content:'';width:7px;height:7px;border-radius:50%;background:#d1aaff;
+  box-shadow:0 0 0 4px rgba(199,165,255,.16);
+}
+.studio-page .studio-intro-headline {
+  display:block;font-size:clamp(26px,5.3vw,75px);line-height:.91;letter-spacing:-.065em;
+  color:#fff;font-weight:900;
+}
+.studio-page .studio-intro-sub {color:#f0e6f8;font-size:clamp(10px,1.15vw,15px);line-height:1.55;font-weight:650;word-break:keep-all;}
+.studio-page #introPlayer .intro-play {
+  width:clamp(52px,6vw,80px);height:clamp(52px,6vw,80px);
+  background:linear-gradient(145deg,#a46aed,#7644b5);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 0 0 9px rgba(185,125,246,.16),0 12px 40px rgba(14,5,23,.42);
+  font-size:clamp(18px,2vw,24px);padding-left:4px;
+}
+.studio-page #introPlayer .intro-cover:hover .intro-play {
+  transform:translate(-50%,-50%) scale(1.06);
+  box-shadow:0 0 0 12px rgba(185,125,246,.15),0 16px 50px rgba(14,5,23,.44);
+}
+.studio-page #introPlayer .intro-watch {
+  z-index:3;bottom:clamp(13px,3%,32px);left:clamp(20px,5%,66px);
+  font-size:clamp(10px,1vw,13px);font-weight:850;letter-spacing:.14em;
+  color:#fff;text-shadow:0 2px 7px #170b25;
+}
+.studio-page #introPlayer .intro-watch span {color:#d7c3f6;letter-spacing:.06em;}
+.studio-page .intro-bottom strong {font-size:clamp(16px,1.65vw,20px);}
+.studio-page .intro-bottom p {font-size:12px;letter-spacing:.09em;}
+.studio-page .intro-bottom>a {text-decoration:underline;text-underline-offset:5px;font-size:13px;}
+/* Focus area: emphasize real original images and reduce decorative noise. */
+.studio-page .studio-reel-head h2 {text-wrap:balance;}
+.studio-page .studio-stage-info {align-items:flex-start;}
+.studio-page .studio-stage-info .studio-stage-role {color:#dbcaea;font-size:14px;}
+.studio-page .studio-filmstrip-item.has-thumb {
+  box-shadow:0 6px 18px rgba(0,0,0,.13);
+}
+.studio-page .studio-filmstrip-item.has-thumb:is(:hover,.is-active) {
+  border-color:#c7a5ff;
+}
+.studio-page .studio-filmstrip-item .studio-filmstrip-mini img {
+  filter:contrast(1.03) saturate(.92);
+  transition:transform .3s ease,filter .3s ease;
+}
+.studio-page .studio-filmstrip-item:is(:hover,.is-active) .studio-filmstrip-mini img {
+  filter:contrast(1.05) saturate(1.07);transform:scale(1.045);
+}
+.studio-page .works-section .section-title {text-wrap:balance;}
+.studio-page .works-grid.minz-bento .project-content {padding:clamp(22px,2.2vw,31px);}
+.studio-page .works-grid.minz-bento .project-content>p {font-size:15px;line-height:1.72;color:#4b4055;}
+.studio-page .works-grid.minz-bento .project-meta {font-size:11px;line-height:1.55;letter-spacing:.055em;}
+.studio-page .works-grid.minz-bento .project-foot small {font-size:12px;line-height:1.65;color:#574b62;}
+.studio-page .works-grid.minz-bento .project-cta {
+  min-height:44px;display:inline-flex;align-items:center;justify-content:center;
+  border-radius:999px;white-space:normal;text-align:center;
+}
+.studio-page .works-grid.minz-bento .project:focus-within .project-media img {transform:scale(1.02);}
+.studio-page :is(.intro-cover,.studio-filmstrip-item,.studio-stage-action,.filter,.project-cta):focus-visible {
+  outline:3px solid #ae80ed;outline-offset:4px;
+}
+@media(max-width:980px){
+  .studio-page #introPlayer .intro-cover>img {object-position:55% center;}
+  .studio-page .studio-intro-copy {max-width:49%;}
+}
+@media(max-width:760px){
+  .studio-page .intro-head>p:last-child {font-size:14px;}
+  .studio-page #introPlayer {border-radius:13px;}
+  .studio-page .studio-intro-copy {top:13%;left:5%;max-width:49%;gap:7px;}
+  .studio-page .studio-intro-headline {font-size:clamp(23px,5.7vw,39px);}
+  .studio-page .studio-intro-sub {display:none;}
+  .studio-page .studio-intro-eyebrow {font-size:9px;letter-spacing:.075em;}
+  .studio-page #introPlayer .intro-watch {font-size:9px;letter-spacing:.08em;}
+  .studio-page .intro-bottom {align-items:flex-start;}
+  .studio-page .intro-bottom a {font-size:12px;}
+}
+@media(max-width:390px){
+  .studio-page .studio-intro-headline {font-size:22px;}
+  .studio-page .studio-intro-copy {top:13%;}
+  .studio-page .studio-intro-eyebrow {font-size:8px;}
+  .studio-page .intro-watch span {display:none;}
+  .studio-page #introPlayer .intro-play {width:50px;height:50px;font-size:17px;}
+  .studio-page .works-grid.minz-bento .project-content {padding:21px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .studio-page #introPlayer .intro-cover>img,
+  .studio-page #introPlayer .intro-play,
+  .studio-page .studio-filmstrip-item .studio-filmstrip-mini img {transition:none!important;}
+  .studio-page #introPlayer .intro-cover:hover>img {transform:none!important;}
+}
+</style>
+<style id="minz-experience-credit-timeline-v5-2">
+/* ============================================================
+   MINZ / DIRECTOR'S STUDIO / EXPERIENCE CREDIT TIMELINE v5.2
+   Director's Studio only, preserves all seven career/activity items.
+   ============================================================ */
+.studio-page #experience {
+  position:relative;
+  background:radial-gradient(ellipse 58% 42% at 90% 15%,rgba(185,150,218,.20),transparent 72%),
+             linear-gradient(160deg,#f1edf4 0%,#e9e4ed 100%);
+}
+.studio-page #experience .experience-grid {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(16px,2.1vw,26px);align-items:stretch;
+}
+.studio-page #experience .experience-panel {
+  position:relative;isolation:isolate;overflow:hidden;
+  padding:clamp(26px,3vw,43px);
+  border-radius:22px;min-width:0;
+  border:1px solid rgba(65,42,89,.14);
+  box-shadow:0 20px 48px rgba(49,33,66,.07);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;
+}
+.studio-page #experience .experience-panel::before {
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,#6c3c9c,#b594ea 70%,transparent);
+}
+.studio-page #experience .experience-panel:first-child {
+  background:linear-gradient(145deg,#fffefc 0%,#fff 58%,#f8f4fc 100%);
+  color:#241a30;
+}
+.studio-page #experience .experience-panel:last-child {
+  background:radial-gradient(circle at 95% 6%,rgba(171,115,233,.25),transparent 38%),
+             linear-gradient(145deg,#251a36 0%,#181120 100%);
+  color:#fff;
+  border-color:#62447b;
+  box-shadow:0 24px 55px rgba(29,18,42,.18);
+}
+.studio-page #experience .experience-panel:last-child::before {
+  background:linear-gradient(90deg,#c5a0ff,#a476e3 70%,transparent);
+}
+.studio-page #experience .experience-panel h3 {
+  position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  font-size:clamp(22px,2vw,28px);font-weight:850;
+  line-height:1.25;letter-spacing:-.05em;
+  margin:0 0 21px;padding:0 0 23px;
+  border-bottom:1px solid rgba(64,42,80,.18);
+}
+.studio-page #experience .experience-panel:last-child h3 {
+  color:#fff;border-color:rgba(229,205,250,.22);
+}
+.studio-page #experience .experience-panel h3 span {
+  flex:0 0 auto;font-size:11px;font-weight:850;
+  letter-spacing:.12em;color:#7443ac;white-space:nowrap;
+}
+.studio-page #experience .experience-panel:last-child h3 span {color:#dec2ff;}
+.studio-page #experience .timeline-item {
+  position:relative;z-index:1;
+  margin:0;padding:18px 10px 20px 44px;
+  border:0;border-radius:12px;
+  transition:background .25s ease,transform .25s ease;
+}
+.studio-page #experience .timeline-item:not(:last-child)::after {
+  content:"";position:absolute;left:13px;top:40px;bottom:-19px;width:2px;
+  background:linear-gradient(180deg,#b28ade,rgba(154,112,196,.22));pointer-events:none;
+}
+.studio-page #experience .timeline-item::before {
+  content:"";position:absolute;z-index:2;left:5px;top:22px;
+  width:17px;height:17px;border-radius:50%;box-sizing:border-box;
+  background:#fff; border:4px solid #8856bd;
+  box-shadow:0 0 0 5px rgba(156,109,206,.11);
+  transition:background .25s,box-shadow .25s;
+}
+.studio-page #experience .experience-panel:last-child .timeline-item::before {
+  background:#30203e;border-color:#c8a4fb;
+  box-shadow:0 0 0 5px rgba(200,164,251,.12);
+}
+.studio-page #experience .experience-panel:last-child .timeline-item:not(:last-child)::after {
+  background:linear-gradient(180deg,#ab84d8,rgba(176,141,219,.27));
+}
+.studio-page #experience .timeline-item small {
+  display:inline-flex;align-items:center;min-height:25px;
+  padding:5px 10px;border-radius:100px;
+  background:#eee5f8;color:#583087;
+  font-size:11px;line-height:1.2;font-weight:850;letter-spacing:.08em;
+}
+.studio-page #experience .experience-panel:last-child .timeline-item small {
+  background:rgba(196,157,245,.16);color:#e0c9ff;
+  border:1px solid rgba(211,179,248,.23);
+}
+.studio-page #experience .timeline-item h4 {
+  font-size:clamp(17px,1.48vw,20px);font-weight:800;
+  line-height:1.4;letter-spacing:-.035em;
+  margin:11px 0 7px;color:#24192f;word-break:keep-all;
+}
+.studio-page #experience .experience-panel:last-child .timeline-item h4 {color:#fff;}
+.studio-page #experience .timeline-item p {
+  margin:0;color:#554c61;font-size:15px;line-height:1.77;max-width:46ch;
+  word-break:keep-all;
+}
+.studio-page #experience .experience-panel:last-child .timeline-item p {color:#e1d7e9;}
+@media(hover:hover) and (pointer:fine){
+  .studio-page #experience .experience-panel:hover {
+    transform:translateY(-4px);box-shadow:0 28px 60px rgba(49,33,66,.15);
+  }
+  .studio-page #experience .timeline-item:hover {background:rgba(144,94,185,.065)}
+  .studio-page #experience .experience-panel:last-child .timeline-item:hover {
+    background:rgba(210,171,253,.075);
+  }
+  .studio-page #experience .timeline-item:hover::before {box-shadow:0 0 0 8px rgba(159,108,211,.15);}
+}
+/* Spread three career entries evenly across the same-height panel. */
+@media(min-width:901px){
+  .studio-page #experience .experience-panel:first-child {display:flex;flex-direction:column;}
+  .studio-page #experience .experience-panel:first-child .timeline-item {flex:1;}
+}
+@media(max-width:900px){
+  .studio-page #experience .experience-grid {grid-template-columns:minmax(0,1fr);gap:18px;}
+  .studio-page #experience .experience-panel {padding:clamp(23px,5vw,34px);}
+}
+@media(max-width:430px){
+  .studio-page #experience .experience-panel {border-radius:16px;padding:23px 19px;}
+  .studio-page #experience .experience-panel h3 {display:block;font-size:23px;padding-bottom:18px;}
+  .studio-page #experience .experience-panel h3 span {display:block;margin-top:8px;font-size:10px;}
+  .studio-page #experience .timeline-item {padding:15px 0 18px 35px;}
+  .studio-page #experience .timeline-item::before {left:0;top:20px;width:16px;height:16px;}
+  .studio-page #experience .timeline-item:not(:last-child)::after {left:8px;top:36px;bottom:-16px;}
+  .studio-page #experience .timeline-item p {font-size:14px;line-height:1.7;}
+}
+@media(prefers-reduced-motion:reduce){
+  .studio-page #experience :is(.experience-panel,.timeline-item) {transition:none!important;}
+  .studio-page #experience .experience-panel:hover {transform:none;}
+}
+
+</style>
+
+<style id="minz-story-cut-v5-3">
+/* MINZ Director's Studio Story Cut v5.3. Page-local additions only. */
+.studio-page {scroll-behavior:smooth}
+.studio-page .studio-notes-jump{
+ display:inline-flex;align-items:center;gap:13px;align-self:flex-start;color:#ecdbff;
+ padding:5px 1px;border-bottom:1px solid rgba(217,184,255,.52);
+ font-size:13px;font-weight:750;text-decoration:none;transition:color .22s,border-color .22s;
+}
+.studio-page .studio-notes-jump:hover{color:#fff;border-color:#fff}
+.studio-page .studio-notes-jump:focus-visible{outline:3px solid #c9aaff;outline-offset:5px}
+.studio-page .studio-director-notes{
+ margin-top:clamp(30px,4vw,52px);padding:clamp(22px,3vw,40px);
+ border-radius:21px;border:1px solid #523d67;
+ background:linear-gradient(148deg,#24192e 0%,#191321 58%,#17111f 100%);
+ box-shadow:0 17px 58px rgba(0,0,0,.19);scroll-margin-top:105px;
+}
+.studio-page .studio-notes-heading{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:26px}
+.studio-page .studio-notes-heading h3{font-size:clamp(27px,3.1vw,43px);line-height:1.12;letter-spacing:-.06em;margin:9px 0 11px;color:#fff;font-weight:900}
+.studio-page .studio-notes-heading h3 em{font-style:normal;color:#d1b0ff}
+.studio-page .studio-notes-lead{color:#ded1eb;font-size:15px;line-height:1.7;margin:0;max-width:650px}
+.studio-page .studio-note-current{flex:0 0 auto;text-align:right;min-width:145px;padding-bottom:2px}
+.studio-page .studio-note-current span{display:block;color:#bca1df;font-size:10px;font-weight:850;letter-spacing:.14em;margin-bottom:7px}
+.studio-page .studio-note-current strong{display:block;color:#fff;font-size:15px;font-weight:800;line-height:1.4;word-break:keep-all}
+.studio-page .studio-notes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.studio-page .studio-note-card{position:relative;overflow:hidden;min-width:0;min-height:212px;padding:24px 22px 22px;border-radius:14px;border:1px solid #594467;background:rgba(255,255,255,.043);transition:background .25s,transform .25s,border-color .25s}
+.studio-page .studio-note-card:before{content:'';position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,#ad7beb,transparent);opacity:.85}
+.studio-page .studio-note-card-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:24px}
+.studio-page .studio-note-card-head span{font-size:clamp(29px,3vw,42px);font-weight:850;line-height:1;color:#cfb0f7;letter-spacing:-.07em}
+.studio-page .studio-note-card-head small{font-size:10px;font-weight:800;letter-spacing:.11em;color:#cdb5ea;text-align:right}
+.studio-page .studio-note-card h4{font-size:19px;line-height:1.4;letter-spacing:-.035em;color:#fff;margin:0 0 9px;font-weight:800;word-break:keep-all}
+.studio-page .studio-note-card p{font-size:14px;line-height:1.78;color:#ddd0e7;margin:0;word-break:keep-all}
+.studio-page .studio-notes-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:10px;font-weight:850;letter-spacing:.11em;color:#c9a9f2;margin:19px 0 0}
+.studio-page .studio-notes-foot span{font-weight:550;letter-spacing:0;color:#cabbd8}
+@media(hover:hover) and (pointer:fine){
+ .studio-page .studio-note-card:hover{transform:translateY(-4px);background:rgba(196,146,245,.085);border-color:#9870c5}
+}
+/* In the shared main.css a general readability patch sets dark copy on
+   .experience-feature; restore light text on this dark achievement panel. */
+.studio-page #experience .experience-feature > div > p:not(.kicker) {
+  color:#e9def2!important;font-size:15px;line-height:1.85;
+}
+.studio-page #experience .experience-number p{color:#e3d4ed!important;}
+/* Career: semantic story of work. Distinct from timeline entries. */
+.studio-page #experience .section-heading .section-description{max-width:36ch}
+.studio-page .studio-career-bridge{margin-top:24px;padding:27px 32px;border-radius:18px;
+ background:linear-gradient(105deg,#21162e,#382348);color:#fff;display:grid;
+ grid-template-columns:minmax(220px,.85fr) minmax(0,1.65fr);gap:26px;align-items:center;
+ border:1px solid rgba(175,128,224,.45);box-shadow:0 17px 38px rgba(33,18,46,.16)}
+.studio-page .studio-career-bridge-title span{color:#d5b3fa;font-size:10px;letter-spacing:.14em;font-weight:850;display:block;margin-bottom:13px}
+.studio-page .studio-career-bridge-title strong{color:#fff;font-size:clamp(20px,2.1vw,27px);letter-spacing:-.05em;line-height:1.38;word-break:keep-all}
+.studio-page .studio-career-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;align-items:stretch}
+.studio-page .studio-career-flow>div{padding:17px 14px;border-radius:12px;background:rgba(255,255,255,.075);border:1px solid rgba(227,197,254,.20);min-width:0}
+.studio-page .studio-career-flow small{font-size:10px;color:#d0abff;letter-spacing:.08em;font-weight:800;display:block;margin-bottom:10px}
+.studio-page .studio-career-flow b{font-size:14px;line-height:1.55;font-weight:750;color:#fff;word-break:keep-all;display:block}
+.studio-page #experience .timeline-item p{max-width:52ch}
+@media(max-width:1050px){
+ .studio-page .studio-career-bridge{grid-template-columns:1fr}
+ .studio-page .studio-notes-grid{gap:10px}
+ .studio-page .studio-note-card{padding:20px 17px;min-height:215px}
+}
+@media(max-width:760px){
+ .studio-page .studio-notes-heading{display:block}
+ .studio-page .studio-note-current{margin-top:18px;text-align:left;min-width:0}
+ .studio-page .studio-notes-grid{grid-template-columns:1fr;gap:10px}
+ .studio-page .studio-note-card{min-height:0;padding:18px 20px 19px}
+ .studio-page .studio-note-card-head{margin-bottom:12px}
+ .studio-page .studio-director-notes{padding:21px 18px;scroll-margin-top:85px}
+ .studio-page .studio-career-bridge{padding:22px 20px}
+ .studio-page .studio-career-flow{grid-template-columns:1fr;gap:8px}
+ .studio-page .studio-career-flow>div{padding:13px 15px}
+}
+@media(prefers-reduced-motion:reduce){
+ .studio-page{scroll-behavior:auto}
+ .studio-page .studio-note-card{transition:none!important;transform:none!important}
+}
+</style>
+<style id="minz-cinematic-career-polish-v5-3-2">
+/* =============================================================
+   MINZ DIRECTOR'S STUDIO v5.3.2 — Cinematic Career Polish
+   Preserve the dramatic dark proof card; reduce competition
+   with the Experience heading and control responsive balance.
+   Affects #experience only. No project/audio/video JS changes.
+   ============================================================= */
+.studio-page #experience {
+  scroll-margin-top:100px;
+}
+.studio-page #experience .section-heading {
+  align-items:end;
+  margin-bottom:clamp(38px,4.4vw,60px);
+}
+.studio-page #experience .section-heading .section-title {
+  font-size:clamp(54px,6.7vw,96px);
+  line-height:.93;
+  letter-spacing:-.079em;
+}
+.studio-page #experience .section-heading .section-description {
+  max-width:365px;
+  line-height:1.8;
+}
+/* Reintroduced cinematic card, scaled to feel like a featured result,
+   not a second hero section. */
+.studio-page #experience .studio-achievement-strip {
+  --proof-ink:#1a1225;
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  grid-template-columns:minmax(0,1.48fr) minmax(245px,.64fr);
+  align-items:center;
+  gap:clamp(25px,3vw,48px);
+  min-width:0;
+  overflow:hidden;
+  margin:0 0 clamp(26px,3.2vw,42px);
+  padding:clamp(28px,3.4vw,47px) clamp(29px,4vw,57px);
+  border-radius:20px;
+  color:#fff;
+  background:radial-gradient(ellipse 45% 90% at 90% 18%,rgba(132,69,201,.26),transparent 75%),
+             linear-gradient(116deg,#24182f 0%,#1a1125 60%,#20142e 100%);
+  border:1px solid rgba(194,153,244,.28);
+  box-shadow:0 24px 62px rgba(37,19,55,.20), inset 0 1px 0 rgba(255,255,255,.055);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.studio-page #experience .studio-achievement-strip::before {
+  content:"";
+  position:absolute;inset:0 auto 0 0;width:4px;
+  background:linear-gradient(180deg,#d9b8ff,#8b58d1 65%,#554074);
+  z-index:2;
+}
+.studio-page #experience .studio-achievement-strip::after {
+  content:"";
+  position:absolute;pointer-events:none;
+  width:340px;height:340px;border:1px solid rgba(211,171,255,.09);
+  border-radius:50%;right:-155px;top:-180px;
+  box-shadow:0 0 0 53px rgba(200,158,255,.035),0 0 0 110px rgba(200,158,255,.018);
+  z-index:0;
+}
+.studio-page #experience .studio-achievement-main,
+.studio-page #experience .studio-achievement-metric {
+  position:relative;z-index:1;min-width:0;
+}
+.studio-page #experience .studio-achievement-eyebrow {
+  display:flex;align-items:center;gap:10px;
+  color:#d9b5ff!important;
+  font-size:10px;font-weight:900;letter-spacing:.18em;
+  line-height:1.35;margin:0 0 18px;
+}
+.studio-page #experience .studio-achievement-pin {
+  width:7px;height:7px;border-radius:50%;flex:0 0 7px;
+  background:#d4a8ff;box-shadow:0 0 0 5px rgba(207,163,255,.13);
+}
+.studio-page #experience .studio-achievement-sep {opacity:.55;}
+.studio-page #experience .studio-achievement-main h3 {
+  color:#fff;
+  font-size:clamp(26px,2.5vw,39px);
+  line-height:1.2;
+  letter-spacing:-.056em;
+  margin:0 0 17px;
+  font-weight:870;
+  text-wrap:balance;
+  word-break:keep-all;
+}
+.studio-page #experience .studio-achievement-main h3 span {
+  color:#e5d2ff;font-weight:740;
+}
+.studio-page #experience .studio-achievement-summary {
+  max-width:570px;margin:0;
+  font-size:clamp(12px,1.09vw,14px);
+  line-height:1.75;
+  color:#d4c6dd!important;
+  word-break:keep-all;
+}
+.studio-page #experience .studio-achievement-tags {
+  display:flex;flex-wrap:wrap;gap:7px;margin-top:20px;
+}
+.studio-page #experience .studio-achievement-tags span {
+  display:inline-flex;align-items:center;min-height:26px;
+  padding:5px 9px;border-radius:5px;
+  font-size:9px;font-weight:800;letter-spacing:.055em;
+  color:#efddff;
+  border:1px solid rgba(218,187,253,.35);
+  background:rgba(187,135,240,.075);
+}
+.studio-page #experience .studio-achievement-metric {
+  border-left:1px solid rgba(213,176,248,.30);
+  padding-left:clamp(27px,3.5vw,55px);
+  display:flex;flex-direction:column;align-items:flex-start;
+  justify-content:center;
+}
+.studio-page #experience .studio-achievement-metric small {
+  color:#cda9ff;font-size:10px;letter-spacing:.16em;
+  font-weight:850;margin-bottom:9px;
+}
+.studio-page #experience .studio-achievement-metric strong {
+  display:flex;align-items:baseline;gap:10px;
+  font-size:clamp(74px,7.2vw,104px);
+  font-weight:920;line-height:.99;
+  letter-spacing:-.09em;color:#fff;
+  font-variant-numeric:tabular-nums;
+  text-shadow:0 12px 35px rgba(0,0,0,.12);
+  white-space:nowrap;
+}
+.studio-page #experience .studio-achievement-metric strong em {
+  font-style:normal;font-weight:750;font-size:17px;
+  letter-spacing:-.03em;color:#eee2ff;
+}
+.studio-page #experience .studio-achievement-metric p {
+  margin:11px 0 20px;
+  color:#dacde5!important;font-size:12px;line-height:1.6;
+}
+.studio-page #experience .studio-achievement-location {
+  padding-top:11px;width:100%;
+  border-top:1px solid rgba(216,190,243,.20);
+  color:#bea9cf;font-size:9px;font-weight:750;letter-spacing:.14em;
+}
+@media(hover:hover) and (pointer:fine) {
+  .studio-page #experience .studio-achievement-strip:hover {
+    transform:translateY(-3px);
+    box-shadow:0 31px 72px rgba(37,19,55,.24),inset 0 1px 0 rgba(255,255,255,.055);
+  }
+}
+@media(max-width:1050px) {
+  .studio-page #experience .studio-achievement-strip {
+    grid-template-columns:minmax(0,1.15fr) minmax(190px,.63fr);
+    gap:24px;padding:34px 32px;
+  }
+  .studio-page #experience .studio-achievement-main h3 {font-size:clamp(24px,3vw,31px);}
+  .studio-page #experience .studio-achievement-metric {padding-left:26px;}
+  .studio-page #experience .studio-achievement-metric strong {font-size:clamp(61px,7.8vw,83px);}
+  .studio-page #experience .studio-achievement-metric strong em {font-size:14px;}
+}
+@media(max-width:700px) {
+  .studio-page #experience .section-heading {margin-bottom:32px;}
+  .studio-page #experience .section-heading .section-title {
+    font-size:clamp(46px,11.5vw,67px);
+  }
+  .studio-page #experience .studio-achievement-strip {
+    grid-template-columns:minmax(0,1fr);
+    gap:23px;padding:29px 25px;
+    border-radius:16px;
+  }
+  .studio-page #experience .studio-achievement-main h3 {font-size:clamp(26px,6.7vw,32px);}
+  .studio-page #experience .studio-achievement-metric {
+    border-left:0;border-top:1px solid rgba(211,176,248,.27);
+    padding:22px 0 0;
+    display:grid;grid-template-columns:auto 1fr;
+    column-gap:12px;row-gap:5px;
+    align-items:end;
+  }
+  .studio-page #experience .studio-achievement-metric small {
+    grid-column:1/-1;margin:0;
+  }
+  .studio-page #experience .studio-achievement-metric strong {
+    font-size:clamp(67px,15vw,84px);grid-column:1/-1;
+  }
+  .studio-page #experience .studio-achievement-metric p {margin:4px 0 4px;grid-column:1/-1;}
+  .studio-page #experience .studio-achievement-location {
+    grid-column:1/-1;padding-top:10px;margin-top:4px;
+  }
+}
+@media(max-width:375px) {
+  .studio-page #experience .studio-achievement-strip {padding:24px 19px;}
+  .studio-page #experience .studio-achievement-eyebrow {font-size:9px;gap:7px;}
+  .studio-page #experience .studio-achievement-main h3 {font-size:25px;}
+  .studio-page #experience .studio-achievement-metric strong {font-size:64px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .studio-page #experience .studio-achievement-strip {transition:none!important;}
+  .studio-page #experience .studio-achievement-strip:hover {transform:none!important;}
+}
+</style>
+</head>
+
+<body class="studio-page">
+  <header class="header" id="header">
+    <div class="container nav-layout">
+      <a href="#home" class="logo" aria-label="MINZ 홈">MINZ<span>®</span></a>
+      <nav class="nav" id="nav" aria-label="주 메뉴">
+        <a href="#minz-intro">INTRO</a><a href="#works">WORKS</a><a href="#experience">EXPERIENCE</a><a
+          href="#about">ABOUT</a><a href="#contact">CONTACT</a>
+      </nav>
+      <div class="header-actions">
+        <a class="studio-back-link" href="index.html" aria-label="기존 포트폴리오로 돌아가기">ORIGINAL SITE ↗</a>
+        <button class="bgm-btn" id="bgmBtn" type="button" aria-pressed="false">♫ BGM OFF</button>
+        <button class="menu-btn" id="menuBtn" aria-controls="nav" aria-expanded="false" aria-label="메뉴 열기"
+          type="button">☰</button>
+      </div>
+    </div>
+  </header>
+  <audio id="siteBgm" src="assets/audio/focus-click.mp3" loop preload="none"></audio>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <main>
+    <section id="home" class="hero">
+      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="assets/img/MINZ_hero_shutter.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="studio-camera-hud" aria-hidden="true">
+        <span class="studio-hud-tl"></span><span class="studio-hud-tr"></span>
+        <span class="studio-hud-bl"></span><span class="studio-hud-br"></span>
+        <span class="studio-hud-rec"><i></i> DIRECTOR’S VIEW / 01</span>
+        <span class="studio-hud-side">FRAME THE STORY · MINZ</span>
+      </div>
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <p class="hero-kicker"><span class="signal-dot"></span> DIRECTOR’S STUDIO / FINE CUT 05</p>
+          <h1 class="hero-title">I AM <em>MINZ.</em><span class="typing-line"><span id="typingText">Creator.</span><span
+                class="cursor" aria-hidden="true"></span></span></h1>
+          <p class="hero-description">장면을 만들고, 감정을 설계합니다.<br>기획부터 마지막 컷까지 직접 완성하는 크리에이티브 스튜디오.</p>
+          <div class="hero-services">
+            <span>DIRECTING</span><span>FILMING</span><span>DRONE</span><span>EDITING</span><span>AI</span><span>INFLUENCER</span>
+          </div>
+          <div class="hero-actions"><a class="button button-white" href="#studio-reel">WATCH SELECTED FRAMES ↗</a><a class="hero-link"
+              href="#about">ABOUT MINZ ↗</a></div>
+          <button type="button" id="shutterListenBtn" class="shutter-control"><span
+              aria-hidden="true">◎</span><span><strong>SHUTTER SOUND</strong><small>오프닝 사운드 다시 듣기</small></span><span
+              aria-hidden="true">▶</span></button>
+        </div>
+      </div>
+      <div class="container hero-footer"><span>BUSAN BASED · DIRECTOR / FILMMAKER</span><a href="#minz-intro">SCROLL TO
+          EXPLORE ↓</a></div>
+    </section>
+
+    <section id="minz-intro" class="minz-intro" aria-labelledby="introTitle">
+      <div class="container">
+        <div class="intro-head reveal">
+          <p class="kicker">MEET THE CREATOR / 2026</p>
+          <h2 id="introTitle">Meet <em>MINZ.</em></h2>
+          <p>생각을 장면으로, 장면을 이야기로.<br>30초에 담아낸 저의 크리에이티브 여정입니다.</p>
+        </div>
+        <div class="intro-player reveal" id="introPlayer">
+          <button type="button" id="introPlay" class="intro-cover" aria-label="MINZ 30초 자기소개 영상 재생">
+            <img src="assets/img/thumbnails/minz-showreel-studio-v5.webp"
+              data-fallback="https://img.youtube.com/vi/jJtmsYwahRo/maxresdefault.jpg"
+              alt="보라색 MINZ 모자를 쓴 캐릭터가 시네마 카메라를 다루는 편집 스튜디오 장면"
+              width="1600" height="900" loading="lazy">
+            <span class="studio-intro-copy" aria-hidden="true">
+              <span class="studio-intro-eyebrow">MINZ / 30s CREATIVE REEL</span>
+              <strong class="studio-intro-headline">BEHIND<br>THE FRAME.</strong>
+              <span class="studio-intro-sub">기획부터 촬영·편집까지, 30초의 기록</span>
+            </span>
+            <span class="intro-play" aria-hidden="true">▶</span>
+            <span class="intro-watch" aria-hidden="true">WATCH THE FILM <span>· 00:30</span></span>
+          </button>
+          <button type="button" id="introClose" class="intro-close" hidden>✕ 닫기</button>
+        </div>
+        <div class="intro-bottom">
+          <div><strong>MINZ — 30s Introduction Film</strong>
+            <p>DIRECTING · FILMING · DRONE · EDITING</p>
+          </div><a href="https://youtu.be/jJtmsYwahRo" target="_blank" rel="noopener noreferrer">재생되지 않으면 YouTube에서 바로 보기 ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section" aria-label="주요 성과">
+      <div class="container proof-grid">
+        <div class="proof-item"><small>01 / PROJECT SUPPORT</small><strong>200<span>만 원</span></strong>
+          <p>봉산마을 관광 콘텐츠 제작지원</p>
+        </div>
+        <div class="proof-item"><small>02 / CONTENT PERFORMANCE</small><strong>5.4<span>만 회</span></strong>
+          <p>짱구 팝업스토어 릴스 조회수</p>
+        </div>
+        <div class="proof-item"><small>03 / PRODUCTION</small><strong>ONE STOP</strong>
+          <p>기획 · 촬영 · 드론 · 편집</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experimental layout: this section exists only in directors-studio.html -->
+    <section id="studio-reel" class="studio-reel" aria-labelledby="studioReelTitle">
+      <div class="container">
+        <div class="studio-reel-head reveal">
+          <div>
+            <p class="studio-mini-label">01 / DIRECTOR’S SELECT</p>
+            <h2 id="studioReelTitle">A story in <em>three frames.</em></h2>
+          </div>
+          <p>세 개의 장면으로 만나는 MINZ의 시선.<br>프로젝트를 선택하면 대표 장면과 제작 이야기를 확인할 수 있습니다.</p>
+        </div>
+        <div class="studio-stage" id="studioStage" aria-live="polite">
+          <div class="studio-stage-media">
+            <div class="studio-stage-photo">
+              <div class="studio-stage-placeholder" aria-hidden="true">PREVIEW UNAVAILABLE</div>
+              <img id="studioStageImage" src="assets/img/thumbnails/donggu-studio-cinematic-v4.webp" alt="어린 선비가 북항을 바라보며 유리병 속 말린 초대장을 발견하는 AI 연출 이미지" loading="lazy">
+              <div class="studio-stage-focus" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="studio-stage-caption" aria-label="선택된 대표작 프레임">
+              <span class="studio-stage-caption-name">MINZ / DIRECTOR'S SELECT</span>
+              <span class="studio-stage-index" id="studioStageIndex">FRAME 01 / 03</span>
+            </div>
+          </div>
+          <div class="studio-stage-info">
+            <p class="studio-mini-label" id="studioStageType">AI / CINEMATIC STORY</p>
+            <h3 id="studioStageTitle">바다에서 온 초대장</h3>
+            <p class="studio-stage-desc" id="studioStageDesc">어린 선비의 시선으로 부산 동구를 여행하는 AI 시네마틱 스토리.</p>
+            <p class="studio-stage-role" id="studioStageRole">기획 · 촬영 · AI 연출 · 편집</p>
+            <button type="button" class="studio-stage-action" id="studioStageAction" disabled>영상 제작 중</button>
+            <a class="studio-notes-jump" href="#studio-director-notes">제작 과정 살펴보기 <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <div class="studio-filmstrip-wrap">
+          <div class="studio-filmstrip-top"><span>SELECT A FRAME</span><span>01 — 03</span></div>
+          <div class="studio-filmstrip" id="studioFilmstrip" role="group" aria-label="대표 작품 선택">
+            <button type="button" class="studio-filmstrip-item is-active" data-reel-index="0" aria-pressed="true">01 / 바다에서 온 초대장</button>
+            <button type="button" class="studio-filmstrip-item" data-reel-index="1" aria-pressed="false">02 / 영도 봉산마을</button>
+            <button type="button" class="studio-filmstrip-item" data-reel-index="2" aria-pressed="false">03 / 부산 서구</button>
+          </div>
+        </div>
+        <!-- v5.3: three steps are production notes, not fabricated behind-the-scenes photos. -->
+        <section class="studio-director-notes reveal" id="studio-director-notes" aria-labelledby="studioNotesTitle">
+          <div class="studio-notes-heading">
+            <div>
+              <p class="studio-mini-label">BEHIND THE FRAME / DIRECTOR'S NOTES</p>
+              <h3 id="studioNotesTitle">The story <em>behind the scene.</em></h3>
+              <p class="studio-notes-lead">기획 의도부터 제작 과정, 결과까지. 작품을 만드는 방식도 보여줍니다.</p>
+            </div>
+            <div class="studio-note-current"><span>NOW VIEWING</span><strong id="studioNoteSelected">바다에서 온 초대장</strong></div>
+          </div>
+          <div class="studio-notes-grid" id="studioNotesGrid">
+            <article class="studio-note-card"><div class="studio-note-card-head"><span>01</span><small>CONCEPT</small></div><h4 id="studioNoteTitle0">이야기의 시작</h4><p id="studioNoteText0">어린 선비가 유리병 속 초대장을 따라 부산 동구의 시간을 여행하는 이야기.</p></article>
+            <article class="studio-note-card"><div class="studio-note-card-head"><span>02</span><small>PRODUCTION</small></div><h4 id="studioNoteTitle1">장면을 만드는 과정</h4><p id="studioNoteText1">기획·실사 촬영·AI 연출·편집을 연결하는 제작 과정.</p></article>
+            <article class="studio-note-card"><div class="studio-note-card-head"><span>03</span><small>STATUS</small></div><h4 id="studioNoteTitle2">현재 진행 상태</h4><p id="studioNoteText2">최종 영상 제작 중.</p></article>
+          </div>
+          <p class="studio-notes-foot">PROJECT NOTES <span>실제 수행 내용과 확인된 결과만 기록했습니다.</span></p>
+        </section>
+      </div>
+    </section>
+
+    <section id="works" class="section works-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="kicker">02 / SELECTED PROJECTS</p>
+            <h2 class="section-title">Selected<br><em>Works.</em></h2>
+          </div>
+          <p class="section-description">아이디어를 실행 가능한 결과로.<br>실제 프로젝트와 콘텐츠 성과를 보여줍니다.</p>
+        </div>
+        <div class="filters" role="group" aria-label="작품 카테고리"><button class="filter active" data-filter="all"
+            aria-pressed="true">ALL <span id="workCount">15</span></button><button class="filter" data-filter="video"
+            aria-pressed="false">VIDEO</button><button class="filter" data-filter="ai" aria-pressed="false">AI
+            CONTENT</button><button class="filter" data-filter="design" aria-pressed="false">DESIGN</button><button
+            class="filter" data-filter="web" aria-pressed="false">WEB / UI</button></div>
+        <div class="works-grid" id="worksGrid"></div>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="kicker">03 / PRODUCTION EXPERIENCE</p>
+            <h2 class="section-title">Experience<br><em>& Growth.</em></h2>
+          </div>
+          <p class="section-description">사람의 이야기를 듣고, 콘텐츠를 기획하며, 현장에서 완성해온 경험입니다.</p>
+        </div>
+        <!-- v5.3.2: cinematic proof card, visually subordinate to the section heading. -->
+        <article class="studio-achievement-strip reveal" aria-label="영도 봉산마을 관광 콘텐츠 제작지원 성과">
+          <div class="studio-achievement-main">
+            <p class="studio-achievement-eyebrow"><span class="studio-achievement-pin" aria-hidden="true"></span> FEATURED ACHIEVEMENT <span class="studio-achievement-sep">/</span> 2026</p>
+            <h3>기획부터 최종 컷까지.<br><span>영도 봉산마을 제작 프로젝트</span></h3>
+            <p class="studio-achievement-summary">제작지원 사업 선정부터 기획, 현장·드론 촬영, 롱폼·숏폼 편집까지 전 과정을 수행했습니다.</p>
+            <div class="studio-achievement-tags" aria-label="프로젝트 수행 역할">
+              <span>DIRECTING</span><span>FILMING</span><span>DRONE</span><span>EDITING</span>
+            </div>
+          </div>
+          <div class="studio-achievement-metric">
+            <small>PROJECT FUNDING</small>
+            <strong>200<em>만 원</em></strong>
+            <p>관광 콘텐츠 제작지원 선정</p>
+            <span class="studio-achievement-location">BUSAN · YEONGDO / 2026</span>
+          </div>
+        </article>
+        <div class="experience-grid">
+          <section class="experience-panel reveal">
+            <h3>Production & Strategy <span>01 / CAREER</span></h3>
+            <div class="timeline-item"><small>ONGOING</small>
+              <h4>영상 제작 · 콘텐츠 전략</h4>
+              <p>지역·브랜드 홍보영상과 SNS 숏폼을 기획·촬영·편집하고, YouTube 채널을 운영합니다.</p>
+            </div>
+            <div class="timeline-item"><small>ONGOING · INFLUENCER</small>
+              <h4>크리에이터 · 브랜드 협업</h4>
+              <p>@minz_log를 통해 부산 맛집·핫플·지역 정보를 전달하고 브랜드 협업 콘텐츠를 제작합니다.</p>
+            </div>
+            <div class="timeline-item"><small>7 YEARS</small>
+              <h4>직업상담사 · 7년 실무 경험</h4>
+              <p>상담 현장에서 쌓은 소통과 요구 분석 경험을 인터뷰 구성·콘텐츠 기획 역량에 연결합니다.</p>
+            </div>
+          </section>
+          <section class="experience-panel reveal">
+            <h3>Creative Fieldwork <span>02 / ACTIVITIES</span></h3>
+            <div class="timeline-item"><small>2026</small>
+              <h4>부산 드론 수색대</h4>
+              <p>부산 드론 수색 활동에 참여하며, 초경량비행장치 조종자 1종 자격을 보유하고 있습니다.</p>
+            </div>
+            <div class="timeline-item"><small>2025 —</small>
+              <h4>네이버 클립 크리에이터</h4>
+              <p>맛집·여행·지역 정보를 짧고 명확한 영상 콘텐츠로 전달합니다.</p>
+            </div>
+            <div class="timeline-item"><small>2024</small>
+              <h4>부산콘텐츠코리아랩 서포터즈</h4>
+              <p>부산 지역 콘텐츠를 제작하고 다양한 홍보 활동에 참여했습니다.</p>
+            </div>
+            <div class="timeline-item"><small>INFLUENCER</small>
+              <h4>당근 인플루언서</h4>
+              <p>생활권 기반의 정보와 지역 콘텐츠를 소개하는 활동을 진행했습니다.</p>
+            </div>
+          </section>
+        </div>
+        <div class="studio-career-bridge reveal" aria-label="MINZ 제작 역량의 연결">
+          <div class="studio-career-bridge-title"><span>MINZ / CREATIVE WORKFLOW</span><strong>사람을 이해하는 기획에서<br>완성도 있는 영상까지.</strong></div>
+          <div class="studio-career-flow">
+            <div><small>01 / INSIGHT</small><b>요구 분석 · 스토리 기획</b></div>
+            <div><small>02 / PRODUCTION</small><b>촬영 · 드론 · AI · 편집</b></div>
+            <div><small>03 / CONNECTION</small><b>숏폼 · YouTube · 브랜드 협업</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="container about-grid">
+        <div class="about-image reveal"><img src="assets/img/minz-profile.png" alt="MINZ 크리에이터 프로필"
+            loading="lazy"><span>MEET THE CREATOR / MINZ</span></div>
+        <div class="about-copy reveal">
+          <p class="kicker">04 / ABOUT MINZ</p>
+          <h2>Creative mind.<br><em>Real results.</em></h2>
+          <h3>기획부터 마지막 컷까지,<br>이야기를 완성합니다.</h3>
+          <p>신문방송학 전공을 바탕으로 영상 기획·촬영·편집과 콘텐츠 마케팅을 연결합니다. 인스타그램 @minz_log에서 부산의 맛집·핫플을 소개하며 브랜드 협업 릴스부터 지역 홍보영상, AI 콘텐츠까지
+            목적에 맞게 제작합니다.</p>
+          <p class="skills">Premiere Pro · After Effects · Photoshop · Illustrator · Drone · Generative AI</p><a
+            class="button button-dark" href="#contact">LET'S COLLABORATE ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <p class="kicker">05 / GET IN TOUCH</p>
+        <h2>Have a story?<br><em>Let's create.</em></h2>
+        <p>브랜드 홍보영상 · 드론 촬영 · AI 콘텐츠 · SNS 마케팅</p>
+        <div class="contact-links"><a href="mailto:jakeminz@gmail.com">EMAIL ME ↗</a><a
+            href="https://www.instagram.com/minz_log/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner"><a href="#home" class="logo">MINZ<span>®</span></a>
+      <p>Create Stories. Inspire People.</p><small>© 2026 MINZ · 유재민</small>
+    </div>
+  </footer>
+  <a href="#home" class="back-top" aria-label="맨 위로 이동">↑</a>
+  <dialog id="videoDialog" class="video-dialog" aria-label="프로젝트 영상">
+    <div class="dialog-head"><span>MINZ · PROJECT FILM</span><button id="closeDialog" type="button"
+        aria-label="영상 닫기">✕</button></div>
+    <div id="dialogPlayer" class="dialog-player"></div>
+  </dialog>
+
+  <script>
+    (() => {
+      'use strict';
+      const $ = sel => document.querySelector(sel);
+      const $$ = sel => Array.from(document.querySelectorAll(sel));
+      const YT = 'https://i.ytimg.com/vi/';
+      const IMG = 'assets/img/thumbnails/';
+      const projects = [
+        {
+          cat: 'ai',
+          type: 'AI / CINEMATIC STORY',
+          title: '바다에서 온 초대장',
+          desc: '어린 선비가 신비로운 유리병 속 초대장을 발견하고, 부산 동구의 과거와 현재를 여행하는 AI 시네마틱 프로젝트.',
+          role: '스토리 기획 · 실사 촬영 · AI 연출 · 편집',
+          images: [
+            IMG + 'donggu-studio-cinematic-v4.webp'
+          ],
+          note: '영상 제작 중'
+        },
+        { cat: 'video', type: 'TOURISM / BRAND FILM', title: '영도 봉산마을 관광 콘텐츠', desc: '200만 원 제작지원 선정. 기획부터 현장·드론 촬영과 롱폼·숏폼 편집까지.', result: '제작지원 200만 원', role: '기획 · 촬영 · 드론 · 편집', images: [YT + 'WOeKcOesYJQ/hqdefault.jpg'], url: 'https://youtu.be/WOeKcOesYJQ' },
+        {
+          cat: 'video',
+          type: 'EDUCATION / BRAND FILM',
+          title: '센텀직업전문학교 | FIND YOUR WAY',
+          desc: '새로운 가능성을 발견하는 과정을 인물 중심으로 담은 홍보영상.',
+          role: '기획 · 촬영 · 편집',
+          images: [IMG + '도심 옥상정원에서 시작됩니다.png', IMG + '도심 옥상정원에서 시작됩니다.jpg'],
+          caseStudy: {
+            label: 'PROJECT CONCEPT',
+            message: '인물 중심의 이야기로 배움과 새로운 시작의 메시지를 전하는 교육기관 브랜드 필름.',
+            tags: ['인물 중심 스토리', '교육기관 홍보', '브랜드 필름']
+          },
+          url: 'https://youtu.be/9q5Y0KSXQks'
+        },
+        { cat: 'video', type: 'INSTAGRAM / SHORT-FORM', title: '짱구 팝업스토어 릴스', desc: '현장 중심 영상과 강한 후킹을 결합한 SNS 콘텐츠.', result: '약 5.4만 조회수', role: '기획 · 촬영 · 편집', images: [IMG + 'shinchan-reel-thumb.jpg', IMG + 'shinchan-reel-thumb.png'], url: 'https://www.instagram.com/minz_log/' },
+        { cat: 'video', type: 'PUBLIC / PROMOTION', title: '부산 서구 홍보영상', desc: '부산 서구의 해안과 도시 풍경을 담은 지역 홍보영상.', role: '촬영 · 편집', images: [IMG + '겨울 오후, 부산 서구 해안 풍경.png', IMG + '겨울 오후, 부산 서구 해안 풍경.jpg', YT + 'nzCwQBsn9zk/hqdefault.jpg'], url: 'https://youtu.be/nzCwQBsn9zk' },
+        { cat: 'video', type: 'COMMERCIAL / REAL ESTATE', title: '부산 강서구 부동산 홍보영상', desc: '건물과 공간, 입지 특성을 전달하는 부동산 영상.', role: '기획 · 촬영 · 드론 · 편집', images: [YT + 'Zh1_TzhbqMY/hqdefault.jpg'], url: 'https://youtu.be/Zh1_TzhbqMY' },
+        { cat: 'video', type: 'BRAND / SHORT AD', title: '동백커피 | 업비트 광고', desc: '비트 싱크와 컷 전환을 활용한 카페 브랜드 숏폼.', role: '촬영 · 편집', images: [IMG + 'dongbaek-upbeat-thumb.jpg', IMG + 'dongbaek-upbeat-thumb.png'], video: 'assets/img/video/동백커피 업비트 최종mp4.mp4' },
+        { cat: 'video', type: 'FOOD / INSTAGRAM', title: '듀플릿 해운대점', desc: '맛집·디저트 정보를 감각적으로 전달한 릴스.', result: '약 3.3만 조회수', role: '기획 · 촬영 · 편집', images: [IMG + 'duplit-thumb.jpg', IMG + 'duplit-thumb.png'], url: 'https://www.instagram.com/reel/DcKYiCbyROM/' },
+        { cat: 'ai', type: 'AI / CINEMATIC AD', title: 'SUPERCAR | AI CINEMATIC', desc: 'AI 비주얼과 시네마틱 편집으로 구현한 15초 슈퍼카 광고.', role: '콘셉트 기획 · AI 연출 · 편집', images: [IMG + '네온 시티의 AI 슈퍼카 시네마틱.png', IMG + '네온 시티의 AI 슈퍼카 시네마틱.jpg'], video: 'assets/img/video/20261030슈퍼카_수정01.mp4' },
+        { cat: 'ai', type: 'AI / BRAND CONTENT', title: '동백커피 | AI 브랜드 영상', desc: '실사와 AI를 연결한 스토리형 브랜드 콘텐츠.', role: '기획 · AI 연출 · 편집', images: [IMG + 'dongbaek-ai-thumb.jpg', IMG + 'dongbaek-ai-thumb.png'], video: 'assets/img/video/동백커피 AI 최종.mp4' },
+        { cat: 'design', type: 'CHARACTER / BRANDING', title: 'MINZ 캐릭터 & 브랜드 디자인', desc: 'MINZ의 보라색 아이덴티티를 담은 3D 캐릭터.', role: '캐릭터 기획 · 브랜드 디자인', images: [IMG + 'minz-character-thumbnail.jpg', IMG + 'minz-character-thumbnail.png'], url: 'assets/img/minz-character-case-study.png' },
+        { cat: 'design web', type: 'UI / UX DESIGN', title: 'ONPICK | 오늘 뭐하지?!', desc: '라이프스타일 큐레이션 앱 기획 및 UI 디자인.', role: '서비스 기획 · UI/UX', images: [IMG + 'onpick-thumbnail-b.png', IMG + 'onpick-thumbnail-2.png'], url: 'https://www.figma.com/proto/Ou2MiTEvkYQSkR5TikJLqg?node-id=324-2062&starting-point-node-id=324%3A2062' },
+        { cat: 'design web', type: 'VISUAL / UI DESIGN', title: 'BUSAN NIGHT 01', desc: '부산 야경을 주제로 한 디지털 비주얼 작업.', role: '비주얼 디자인 · UI', images: [IMG + 'busan-night-thumbnail.png'], url: 'https://www.figma.com/design/Ou2MiTEvkYQSkR5TikJLqg?node-id=183-191' },
+        { cat: 'video', type: 'YOUTUBE / SHORTS', title: '다트풍선 | YouTube Shorts', desc: '빠른 컷 구성과 호흡을 활용한 숏폼 콘텐츠.', role: '기획 · 편집', images: [YT + 'CoOvsYrYGBA/hqdefault.jpg'], url: 'https://www.youtube.com/shorts/CoOvsYrYGBA' },
+        { cat: 'web', type: 'WEB / PUBLISHING', title: 'MINZ Portfolio Website', desc: '영상·AI·브랜딩을 연결하는 포트폴리오 웹사이트.', role: '기획 · 웹 퍼블리싱', images: [], url: 'https://github.com/minzlog777/MINZ_Portfolio_001' }
+      ];
+      const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      const toast = $('#toast'); let toastTimer;
+      function notify(message) { toast.textContent = message; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 3500); }
+      const grid = $('#worksGrid');
+      $('#workCount').textContent = projects.length;
+      projects.forEach((p, i) => {
+        const el = document.createElement('article'); el.className = 'project reveal' + (p.caseStudy ? ' project--detailed' : '') + (!p.video && !p.url ? ' project--no-link' : ''); el.dataset.category = p.cat;
+        const num = String(i + 1).padStart(2, '0');
+        const media = p.images.length ? `<img src="${esc(p.images[0])}" data-fallbacks="${esc(p.images.slice(1).join('|'))}" alt="${esc(p.title)} 썸네일" loading="lazy">` : '';
+        const caseStudy = p.caseStudy ? `<div class="project-case-note" aria-label="프로젝트 기획 정보"><div class="project-case-note-head">${esc(p.caseStudy.label)}</div><p>${esc(p.caseStudy.message)}</p><div class="project-case-tags">${p.caseStudy.tags.map(tag => `<span>${esc(tag)}</span>`).join('')}</div></div>` : '';
+        const action = p.video ? `<button type="button" class="project-action" data-video="${esc(p.video)}" aria-label="${esc(p.title)} 재생">▶</button>` : p.url ? `<a class="project-action" target="_blank" rel="noopener noreferrer" href="${esc(p.url)}" aria-label="${esc(p.title)} 열기">↗</a>` : '';
+        // 하단 CTA는 실제 클릭 가능한 버튼/링크. 외부 URL과 로컬 MP4를 구별합니다.
+        const isVideoLink = p.url && (p.cat.split(' ').includes('video') || /(?:youtu\.be|youtube\.com|instagram\.com\/reel)/i.test(p.url));
+        const footerCTA = p.video
+          ? `<button type="button" class="project-cta project-cta--play" data-video="${esc(p.video)}" aria-label="${esc(p.title)} 영상 재생하기">▶ 영상 재생하기</button>`
+          : p.url
+            ? `<a class="project-cta project-cta--link" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(p.title)} ${isVideoLink ? '영상 보러 가기' : '작품 보러 가기'}">↗ ${isVideoLink ? '영상 보러 가기' : '작품 보러 가기'}</a>`
+            : `<span class="project-cta-status" aria-label="${esc(p.title)} 진행 상태">${esc(p.note || '준비 중')}</span>`;
+        el.innerHTML = `<div class="project-media"><div class="project-placeholder"><small>MINZ / ${num}</small><strong>CREATIVE<br>PRODUCTION</strong></div>${media}${action}</div><div class="project-content"><div class="project-meta"><span>${esc(p.type)}</span><span>${num} / ${projects.length}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p>${caseStudy}${p.result ? `<strong class="project-result">${esc(p.result)}</strong>` : ''}<div class="project-foot"><small>MY ROLE · ${esc(p.role)}</small>${footerCTA}</div></div>`;
+        const image = el.querySelector('img');
+        if (image) image.addEventListener('error', () => { const left = (image.dataset.fallbacks || '').split('|').filter(Boolean); if (left.length) { image.src = left.shift(); image.dataset.fallbacks = left.join('|'); } else image.remove(); });
+        const mediaEl = el.querySelector('.project-media'); mediaEl.addEventListener('click', e => { if (e.target.closest('button,a')) return; mediaEl.querySelector('.project-action')?.click(); });
+        grid.appendChild(el);
+      });
+      $$('.filter').forEach(button => button.addEventListener('click', () => {
+        $$('.filter').forEach(b => { const active = b === button; b.classList.toggle('active', active); b.setAttribute('aria-pressed', String(active)); });
+        $$('.project').forEach(card => card.hidden = button.dataset.filter !== 'all' && !card.dataset.category.split(' ').includes(button.dataset.filter));
+      }));
+
+      const bgm = $('#siteBgm'), bgmBtn = $('#bgmBtn'), dialog = $('#videoDialog'), dialogPlayer = $('#dialogPlayer');
+      let bgmEnabled = false, introPlaying = false, localVideoPlaying = false, bgmRequest = 0;
+      bgm.volume = 0.18;
+      function bgmBlocked() { return !bgmEnabled || introPlaying || localVideoPlaying || document.hidden || !document.hasFocus(); }
+      function updateBgm() { bgmBtn.textContent = bgmEnabled ? '♫ BGM ON' : '♫ BGM OFF'; bgmBtn.classList.toggle('active', bgmEnabled); bgmBtn.setAttribute('aria-pressed', String(bgmEnabled)); }
+      async function syncBgm() { const request = ++bgmRequest; if (bgmBlocked()) { bgm.pause(); return; } try { await bgm.play(); if (request !== bgmRequest || bgmBlocked()) bgm.pause(); } catch (error) { bgmEnabled = false; updateBgm(); notify('BGM 파일을 확인해주세요.'); console.warn(error); } }
+      bgmBtn.addEventListener('click', () => { bgmEnabled = !bgmEnabled; updateBgm(); syncBgm(); });
+      document.addEventListener('visibilitychange', syncBgm); window.addEventListener('focus', syncBgm); window.addEventListener('blur', () => bgm.pause());
+      bgm.addEventListener('error', () => { if (bgmEnabled) { bgmEnabled = false; updateBgm(); notify('BGM을 불러오지 못했습니다.'); } });
+
+      // 셔터 효과음은 BGM과 독립된 별도 오디오입니다.
+      const shutter = new Audio('assets/audio/minz-camera.mp3'); shutter.volume = 0.65; shutter.preload = 'auto';
+      const shutterButton = $('#shutterListenBtn'); let previousVolume = null;
+      const finishShutter = () => { shutterButton.classList.remove('is-playing'); if (previousVolume !== null) { bgm.volume = previousVolume; previousVolume = null; } };
+      shutter.addEventListener('ended', finishShutter); shutter.addEventListener('error', finishShutter);
+      shutterButton.addEventListener('click', () => { const hero = $('#heroVideo'); if (hero) { try { hero.currentTime = 0; hero.play().catch(() => { }); } catch (e) { console.warn(e); } } shutter.pause(); shutter.currentTime = 0; if (!bgm.paused && previousVolume === null) { previousVolume = bgm.volume; bgm.volume = .04; } shutterButton.classList.add('is-playing'); shutter.play().catch(() => { finishShutter(); notify('셔터음 파일을 확인해주세요.'); }); });
+
+      // 30초 자기소개 영상
+      const introPlayer = $('#introPlayer'), introCover = $('#introPlay'), introClose = $('#introClose');
+      const introThumb = introCover.querySelector('img'); introThumb.addEventListener('error', () => { if (introThumb.dataset.fallback) { introThumb.src = introThumb.dataset.fallback; introThumb.dataset.fallback = ''; } });
+      function closeIntro() { if (!introPlaying) return; introPlayer.querySelector('iframe')?.remove(); introPlaying = false; introCover.hidden = false; introClose.hidden = true; syncBgm(); }
+      introCover.addEventListener('click', () => { if (introPlaying) return; if (dialog.open) dialog.close(); introPlaying = true; syncBgm(); const frame = document.createElement('iframe'); frame.title = 'MINZ 30초 자기소개 영상'; frame.referrerPolicy = 'strict-origin-when-cross-origin'; frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'; frame.allowFullscreen = true; frame.src = 'https://www.youtube.com/embed/jJtmsYwahRo?autoplay=1&playsinline=1&rel=0'; introPlayer.append(frame); introCover.hidden = true; introClose.hidden = false; });
+      introClose.addEventListener('click', closeIntro);
+
+      // MP4 작품 팝업
+      grid.addEventListener('click', async e => { const button = e.target.closest('[data-video]'); if (!button) return; closeIntro(); const video = document.createElement('video'); video.src = button.dataset.video; video.controls = true; video.playsInline = true; video.preload = 'metadata'; video.setAttribute('controlsList', 'nodownload'); dialogPlayer.replaceChildren(video); localVideoPlaying = true; syncBgm(); if (!dialog.open) dialog.showModal(); try { await video.play(); } catch (err) { notify('영상 파일 경로 및 형식을 확인해주세요.'); console.warn(err); } });
+      $('#closeDialog').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+      dialog.addEventListener('close', () => { const video = dialogPlayer.querySelector('video'); if (video) { video.pause(); video.removeAttribute('src'); video.load(); } dialogPlayer.replaceChildren(); localVideoPlaying = false; syncBgm(); });
+      $$('.project-media a[target="_blank"]').forEach(link => link.addEventListener('click', () => bgm.pause()));
+
+      // 메뉴 · 타이핑 · 스크롤 효과
+      const menu = $('#menuBtn'), nav = $('#nav'); menu.addEventListener('click', () => { const opened = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', String(opened)); menu.setAttribute('aria-label', opened ? '메뉴 닫기' : '메뉴 열기'); });
+      $$('#nav a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); }));
+      const typing = $('#typingText'), phrases = ['Creator.', 'Filmmaker.', 'Editor.', 'Storyteller.'];
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { let word = 0, pos = phrases[0].length, erase = true; function type() { const current = phrases[word]; if (erase) { pos--; typing.textContent = current.slice(0, Math.max(0, pos)); if (pos <= 0) { word = (word + 1) % phrases.length; erase = false; setTimeout(type, 450); return; } } else { pos++; typing.textContent = phrases[word].slice(0, pos); if (pos >= phrases[word].length) { erase = true; setTimeout(type, 1700); return; } } setTimeout(type, erase ? 65 : 110); } setTimeout(type, 2100); }
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .08 }); $$('.reveal').forEach(el => observer.observe(el));
+      const header = $('#header'); const scroll = () => header.classList.toggle('scrolled', scrollY > 30); addEventListener('scroll', scroll, { passive: true }); scroll();
+    })();
+  </script>
+
+  <!-- MINZ 2026 DESIGN UPGRADE -->
+  <script>
+    (() => {
+      "use strict";
+
+      const FEATURED = [
+        "바다에서 온 초대장",
+        "영도 봉산마을 관광 콘텐츠",
+        "부산 서구 홍보영상"
+      ];
+
+      const PREVIEW_TITLES = new Set([
+        "SUPERCAR | AI CINEMATIC",
+        "동백커피 | AI 브랜드 영상"
+      ]);
+
+      function initMinzUpgrade() {
+        const grid = document.getElementById("worksGrid");
+        const section = document.getElementById("works");
+
+        if (!grid || !section) return;
+
+        const cards = Array.from(
+          grid.querySelectorAll(".project")
+        );
+
+        if (!cards.length) return;
+
+        document.documentElement.classList.add(
+          "minz-enhanced"
+        );
+
+        // 1. 대표작 3개를 맨 앞으로 배치
+        function findProject(title) {
+          return cards.find(card => {
+            const heading = card.querySelector(
+              ".project-content h3"
+            );
+            return heading?.textContent.trim() === title;
+          });
+        }
+
+        const featured = FEATURED
+          .map(findProject)
+          .filter(Boolean);
+
+        [...featured].reverse().forEach(card => {
+          grid.prepend(card);
+        });
+
+        // 2. 대표작 라벨 추가
+        featured.forEach((card, index) => {
+          card.classList.add("project--featured");
+
+          if (index === 0) {
+            card.classList.add("project--lead");
+          }
+
+          const media = card.querySelector(
+            ".project-media"
+          );
+
+          if (!media) return;
+
+          const stamp = document.createElement("span");
+          stamp.className = "minz-feature-stamp";
+          stamp.textContent = `FEATURED 0${index + 1}`;
+          stamp.setAttribute("aria-hidden", "true");
+
+          media.appendChild(stamp);
+        });
+
+        // 3. 대표작 소개 문구 생성
+        const intro = document.createElement("div");
+        intro.className = "minz-featured-intro";
+
+        intro.innerHTML = `
+      <div>
+        <span class="minz-eyebrow">
+          CURATED / START HERE
+        </span>
+        <strong class="minz-featured-title">
+          먼저 만나볼 대표 프로젝트
+        </strong>
+      </div>
+      <p>
+        현장 촬영부터 AI 시네마틱까지,
+        MINZ의 제작 역량을 보여주는
+        세 가지 대표 작업입니다.
+      </p>
+    `;
+
+        grid.before(intro);
+        grid.classList.add("minz-bento");
+
+        // 4. 기존 작품 필터 유지
+        const filters = Array.from(
+          section.querySelectorAll(
+            ".filter[data-filter]"
+          )
+        );
+
+        function updateLayout() {
+          const active = filters.find(button =>
+            button.classList.contains("active")
+          );
+
+          const showAll =
+            !active || active.dataset.filter === "all";
+
+          grid.classList.toggle("minz-all", showAll);
+          intro.hidden = !showAll;
+        }
+
+        filters.forEach(button => {
+          button.addEventListener("click", updateLayout);
+        });
+
+        updateLayout();
+
+        // 5. 작품 순서 번호 새로 지정
+        const ordered = Array.from(
+          grid.querySelectorAll(".project")
+        );
+
+        ordered.forEach((card, index) => {
+          const number = card.querySelector(
+            ".project-meta span:last-child"
+          );
+
+          if (number) {
+            number.textContent =
+              `${String(index + 1).padStart(2, "0")} / ${ordered.length}`;
+          }
+        });
+
+        // 6. PC에서 로컬 MP4 무음 호버 프리뷰
+        const reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        const hoverEnabled = window.matchMedia(
+          "(hover: hover) and (pointer: fine)"
+        ).matches;
+
+        if (!reduceMotion && hoverEnabled) {
+          ordered.forEach(card => {
+            const title = card.querySelector(
+              ".project-content h3"
+            )?.textContent.trim();
+
+            const button = card.querySelector(
+              ".project-action[data-video]"
+            );
+
+            const media = card.querySelector(
+              ".project-media"
+            );
+
+            if (
+              !PREVIEW_TITLES.has(title) ||
+              !button ||
+              !media
+            ) return;
+
+            let preview = null;
+
+            function stopPreview() {
+              card.classList.remove("is-previewing");
+
+              if (!preview) return;
+
+              const video = preview;
+              preview = null;
+
+              video.pause();
+              video.removeAttribute("src");
+              video.load();
+              video.remove();
+            }
+
+            media.addEventListener("pointerenter", () => {
+              if (preview || document.hidden) return;
+
+              preview = document.createElement("video");
+              preview.className = "minz-hover-preview";
+              preview.muted = true;
+              preview.defaultMuted = true;
+              preview.loop = true;
+              preview.playsInline = true;
+              preview.preload = "none";
+              preview.src = button.dataset.video;
+              preview.setAttribute("aria-hidden", "true");
+
+              preview.addEventListener(
+                "playing",
+                () => card.classList.add("is-previewing"),
+                { once: true }
+              );
+
+              preview.addEventListener(
+                "error",
+                stopPreview,
+                { once: true }
+              );
+
+              media.appendChild(preview);
+              preview.play().catch(stopPreview);
+            });
+
+            media.addEventListener(
+              "pointerleave",
+              stopPreview
+            );
+
+            media.addEventListener("click", stopPreview);
+
+            document.addEventListener(
+              "visibilitychange",
+              () => {
+                if (document.hidden) stopPreview();
+              }
+            );
+          });
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener(
+          "DOMContentLoaded",
+          initMinzUpgrade,
+          { once: true }
+        );
+      } else {
+        initMinzUpgrade();
+      }
+    })();
+  </script>
+  <!-- END MINZ DESIGN UPGRADE -->
+
+  <!-- Director’s Studio v4: 독립 페이지 전용 기능 -->
+<script>
+/* Director's Studio: independent enhancements; main portfolio scripts remain unchanged. */
+(() => {
+  'use strict';
+  const $ = selector => document.querySelector(selector);
+  const originalCards = Array.from(document.querySelectorAll('#worksGrid .project'));
+  const selectedTitles = ['바다에서 온 초대장', '영도 봉산마을 관광 콘텐츠', '부산 서구 홍보영상'];
+  const cards = selectedTitles.map(title => originalCards.find(card =>
+    card.querySelector('.project-content h3')?.textContent.trim() === title));
+  const reelButtons = [...document.querySelectorAll('.studio-filmstrip-item')];
+  const stageImage = $('#studioStageImage');
+  const stageTitle = $('#studioStageTitle');
+  const stageType = $('#studioStageType');
+  const stageDesc = $('#studioStageDesc');
+  const stageRole = $('#studioStageRole');
+  const stageIndex = $('#studioStageIndex');
+  const stageAction = $('#studioStageAction');
+  let currentIndex = 0;
+
+  function setStage(index) {
+    const card = cards[index];
+    if (!card) return;
+    currentIndex = index;
+    reelButtons.forEach((button, i) => {
+      button.classList.toggle('is-active', i === index);
+      button.setAttribute('aria-pressed', String(i === index));
+    });
+    const title = card.querySelector('.project-content h3')?.textContent.trim() || '';
+    const type = card.querySelector('.project-meta span:first-child')?.textContent.trim() || '';
+    const desc = card.querySelector('.project-content > p')?.textContent.trim() || '';
+    const role = (card.querySelector('.project-foot small')?.textContent.trim() || '').replace(/^MY ROLE\s*·\s*/, '');
+    stageTitle.textContent = title;
+    stageType.textContent = type;
+    stageDesc.textContent = desc;
+    stageRole.textContent = role;
+    stageIndex.textContent = `FRAME 0${index + 1} / 03`;
+    const originalImage = card.querySelector('.project-media img');
+    if (originalImage) {
+      const fallbacks = (originalImage.dataset.fallbacks || '').split('|').filter(Boolean);
+      // Resolve from the same base as existing portfolio cards, no generated paths.
+      stageImage.src = originalImage.currentSrc || originalImage.src;
+      stageImage.alt = title + ' 대표 장면';
+      stageImage.dataset.fallbacks = fallbacks.join('|');
+      stageImage.hidden = false;
+    } else {
+      stageImage.removeAttribute('src');
+      stageImage.hidden = true;
+    }
+    const action = card.querySelector('.project-cta:is(button,a)');
+    if (!action) {
+      stageAction.textContent = card.querySelector('.project-cta-status')?.textContent.trim() || '영상 제작 중';
+      stageAction.disabled = true;
+    } else {
+      stageAction.textContent = action.matches('a') ? '프로젝트 영상 보기 ↗' : '영상 재생하기 ▶';
+      stageAction.disabled = false;
+    }
+  }
+  if (stageImage) {
+    stageImage.addEventListener('error', () => {
+      const fallbacks = (stageImage.dataset.fallbacks || '').split('|').filter(Boolean);
+      if (fallbacks.length) {
+        stageImage.src = fallbacks.shift();
+        stageImage.dataset.fallbacks = fallbacks.join('|');
+      } else stageImage.hidden = true;
+    });
+    reelButtons.forEach((button, i) => button.addEventListener('click', () => setStage(i)));
+    stageAction.addEventListener('click', () => {
+      const action = cards[currentIndex]?.querySelector('.project-cta:is(button,a)');
+      if (action) action.click(); // Reuse the original project's actual player/link behavior.
+    });
+    setStage(0);
+  }
+
+  // Decorative focus-frame overlay on video thumbnails (does not obscure links).
+  originalCards.forEach((card, i) => {
+    const media = card.querySelector('.project-media');
+    if (!media) return;
+    const finder = document.createElement('span');
+    finder.className = 'studio-viewfinder';
+    finder.setAttribute('aria-hidden', 'true');
+    finder.innerHTML = '<i class="studio-corner"></i><i class="studio-corner"></i><i class="studio-corner"></i><i class="studio-corner"></i><b>REC</b><span class="studio-finder-text">FRAME ' + String(i + 1).padStart(2, '0') + '</span>';
+    media.append(finder);
+  });
+})();
+
+</script>
+  <!-- Director’s Studio v4: 독립 페이지 전용 기능 -->
+<script>
+/* MINZ Director's Studio thumbnail v2 labels. Run after existing project renderer.
+   Does not replace any original thumbnail or change video/sound handlers. */
+(() => {
+  'use strict';
+  const selected = new Set([
+    '바다에서 온 초대장',
+    '영도 봉산마을 관광 콘텐츠',
+    '부산 서구 홍보영상'
+  ]);
+  const genreByTitle = new Map([
+    ['바다에서 온 초대장', 'AI CINEMATIC'],
+    ['영도 봉산마을 관광 콘텐츠', 'TOURISM FILM'],
+    ['부산 서구 홍보영상', 'CITY PROMO'],
+    ['센텀직업전문학교 | FIND YOUR WAY', 'EDUCATION FILM'],
+    ['SUPERCAR | AI CINEMATIC', 'AI COMMERCIAL'],
+    ['동백커피 | 업비트 광고', 'BRAND FILM'],
+    ['동백커피 | AI 브랜드 영상', 'AI BRAND FILM']
+  ]);
+  const allCards = Array.from(document.querySelectorAll('#worksGrid .project'));
+  /* Replace text-only frame selection with real source thumbnail previews. */
+  const orderedTitles = [
+    '바다에서 온 초대장',
+    '영도 봉산마을 관광 콘텐츠',
+    '부산 서구 홍보영상'
+  ];
+  const reelButtons = document.querySelectorAll('.studio-filmstrip-item');
+  reelButtons.forEach((button, idx) => {
+    const card = allCards.find(c => c.querySelector('.project-content h3')?.textContent.trim() === orderedTitles[idx]);
+    const img = card?.querySelector('.project-media img');
+    if (!img || button.querySelector('.studio-filmstrip-mini')) return;
+    const labelText = button.textContent.trim();
+    const mini = document.createElement('span'); mini.className = 'studio-filmstrip-mini';
+    const image = document.createElement('img');
+    image.src = img.currentSrc || img.src;
+    image.alt = ''; image.loading = 'lazy';
+    const fallbacks = (img.dataset.fallbacks || '').split('|').filter(Boolean);
+    image.addEventListener('error', () => {
+      if (fallbacks.length) image.src = fallbacks.shift();
+      else mini.hidden = true;
+    });
+    mini.append(image);
+    const label = document.createElement('span'); label.className = 'studio-filmstrip-label';
+    label.textContent = labelText;
+    button.replaceChildren(mini,label);
+    button.classList.add('has-thumb');
+  });
+
+  allCards.forEach((card, index) => {
+    const media = card.querySelector('.project-media');
+    const title = card.querySelector('.project-content h3')?.textContent.trim();
+    if (!media || !title || media.querySelector('.studio-thumb-label')) return;
+    if (selected.has(title)) card.classList.add('studio-featured-project');
+    const cat = (card.querySelector('.project-meta span:first-child')?.textContent || 'PORTFOLIO').trim();
+    const label = document.createElement('span'); label.className = 'studio-thumb-label';
+    label.textContent = genreByTitle.get(title) || cat.split('/')[0].trim().slice(0,26);
+    label.setAttribute('aria-hidden','true');
+    const ordinal = document.createElement('span'); ordinal.className = 'studio-thumb-ordinal';
+    ordinal.textContent = String(index+1).padStart(2,'0') + ' / ' + String(allCards.length).padStart(2,'0');
+    ordinal.setAttribute('aria-hidden','true');
+    const sign = document.createElement('span'); sign.className='studio-thumb-signature';
+    sign.textContent = 'MINZ / DIRECTOR’S CUT';
+    sign.setAttribute('aria-hidden','true');
+    media.append(label,ordinal,sign);
+  });
+})();
+
+</script>
+
+<script id="minz-v5-3-directors-notes">
+/* Changes only the selected project's written production notes.
+   Original stage buttons and video/player handlers remain unchanged. */
+(() => {
+ 'use strict';
+ const entries = [
+  {
+   project:'바다에서 온 초대장',
+   blocks:[
+    ['CONCEPT','이야기의 시작','어린 선비가 유리병 속 초대장을 발견하고 부산 동구의 과거와 현재를 여행하는 이야기.'],
+    ['PRODUCTION','실사와 AI의 연결','스토리 기획·부산 동구 실사 촬영·AI 연출·영상 편집으로 장면을 구성합니다.'],
+    ['STATUS','최종 영상 제작 중','완성 후 작품 링크를 연결할 예정입니다. 현재는 제작 과정과 대표 장면을 공개합니다.']
+   ]
+  },
+  {
+   project:'영도 봉산마을 관광 콘텐츠',
+   blocks:[
+    ['CONCEPT','마을을 담는 시선','영도 봉산마을의 장소와 일상을 관광 콘텐츠로 소개하는 프로젝트.'],
+    ['PRODUCTION','기획부터 최종 컷까지','기획·현장 촬영·드론 촬영을 진행하고 롱폼과 숏폼 콘텐츠를 편집했습니다.'],
+    ['RESULT','제작지원 200만 원','관광 콘텐츠 제작지원 사업에 선정되어 실제 제작으로 연결했습니다.']
+   ]
+  },
+  {
+   project:'부산 서구 홍보영상',
+   blocks:[
+    ['CONCEPT','지역의 풍경을 담다','부산 서구의 해안과 도시 풍경을 화면으로 전달하는 지역 홍보영상.'],
+    ['PRODUCTION','현장 촬영과 편집','풍경과 지역의 공간감을 고려해 촬영하고 영상의 흐름을 편집했습니다.'],
+    ['DELIVERABLE','홍보영상 공개','완성된 지역 홍보영상을 작품 링크에서 확인할 수 있습니다.']
+   ]
+  }
+ ];
+ const q=id=>document.getElementById(id);
+ const selectButtons=Array.from(document.querySelectorAll('#studioFilmstrip [data-reel-index]'));
+ function update(index) {
+  const entry=entries[index];if(!entry)return;
+  q('studioNoteSelected').textContent=entry.project;
+  entry.blocks.forEach(([category,title,description],i)=>{
+    const el=q('studioNoteTitle'+i);const body=q('studioNoteText'+i);
+    const type=el.closest('.studio-note-card').querySelector('small');
+    el.textContent=title;body.textContent=description;type.textContent=category;
+  });
+ }
+ selectButtons.forEach((button,index)=>button.addEventListener('click',()=>update(index)));
+ update(0);
+})();
+</script>
+</body>
+
+</html>
