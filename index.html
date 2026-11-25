@@ -102,7 +102,7 @@
             <span>FILMING</span><span>EDITING</span><span>DRONE</span><span>AI</span>
           </div>
           <div class="hero-actions"><a class="button button-white" href="#minz-viewfinder">직무별 대표작 보기 ↗</a><a class="hero-link"
-              href="#minz-intro" data-showreel>30초 쇼릴 보기 ▶</a></div>
+              href="https://youtu.be/jJtmsYwahRo" data-showreel>30초 쇼릴 보기 ▶</a></div>
           <button type="button" id="shutterListenBtn" class="shutter-control"><span
               aria-hidden="true">◎</span><span><strong>SHUTTER SOUND</strong><small>오프닝 사운드 다시 듣기</small></span><span
               aria-hidden="true">▶</span></button>
@@ -1423,30 +1423,18 @@
     const card=link.closest('.project');const title=reel || id==='jJtmsYwahRo' ? 'MINZ — 30초 쇼릴' : (card?.querySelector('.project-content h3')?.textContent.trim() || link.dataset.filmTitle || 'MINZ 작품 영상');
     titleEl.textContent=title;
     if (location.protocol === 'file:') {
-      if (id !== 'jJtmsYwahRo') {
-        const message=document.createElement('div');message.className='minz-showreel-local-note';message.setAttribute('role','status');
-        message.textContent='이 작품은 YouTube 삽입 영상입니다. 현재 파일을 직접 열어 재생 출처를 전달할 수 없습니다. VS Code에서 Open with Live Server로 열거나 GitHub Pages 주소로 접속하면 이 모달 안에서 감상할 수 있습니다.';
-        stage.replaceChildren(message);if (!dialog.open) dialog.showModal();window.dispatchEvent(new Event('minz:media-state'));return;
-      }
-      // A file:// page cannot provide a reliable HTTP Referer to YouTube.
-      // Optional local original: assets/img/video/minz-showreel.mp4
-      const video=document.createElement('video');
-      video.controls=true;video.playsInline=true;video.preload='metadata';
-      video.poster='assets/img/thumbnails/minz-showreel-studio-v5.webp';
-      const message=document.createElement('div');message.className='minz-showreel-local-note';
-      message.setAttribute('role','status');message.hidden=true;
-      message.textContent='로컬 쇼릴 MP4가 없거나 재생할 수 없습니다. VS Code Live Server에서 이 페이지를 열거나 assets/img/video/minz-showreel.mp4 파일을 추가해 주세요.';
-      video.addEventListener('error',()=>{video.hidden=true;message.hidden=false;},{once:true});
-      stage.replaceChildren(video,message);
-      if (!dialog.open) dialog.showModal();
-      window.dispatchEvent(new Event('minz:media-state'));
-      video.src='assets/img/video/minz-showreel.mp4';
-      video.play().catch(()=>{});
-      return;
+      // YouTube embeds require real HTTP(S) origin/referrer. Never request a local showreel MP4.
+      const message=document.createElement('div');
+      message.className='minz-showreel-local-note';message.setAttribute('role','status');
+      const heading=document.createElement('strong');heading.textContent='유튜브 영상은 웹 주소에서 재생됩니다';
+      const text=document.createElement('p');text.textContent='이 파일은 현재 직접 열려 있습니다. VS Code에서 index.html을 우클릭하고 Open with Live Server를 선택하거나, GitHub Pages에 업로드한 공개 주소로 접속해 주세요.';
+      message.append(heading,text);
+      stage.replaceChildren(message);
+      if (!dialog.open) dialog.showModal();window.dispatchEvent(new Event('minz:media-state'));return;
     }
     const iframe=document.createElement('iframe');
     iframe.title=title+' 영상 플레이어';
-    iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&playsinline=1&rel=0&origin='+encodeURIComponent(location.origin);
+    iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&playsinline=1&rel=0&origin='+encodeURIComponent(location.origin);
     iframe.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';
     iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.allowFullscreen=true;
     stage.replaceChildren(iframe);
